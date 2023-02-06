@@ -4,17 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>blank</artifactId>
-        <groupId>com.regnosys</groupId>
+        <groupId>com.drr</groupId>
         <version>0.0.0.master</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.regnosys.blank</groupId>
+    <groupId>com.drr.blank</groupId>
     <artifactId>tests</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.regnosys.blank</groupId>
+            <groupId>com.drr.blank</groupId>
             <artifactId>rosetta-source</artifactId>
             <version>${project.version}</version>
         </dependency>
