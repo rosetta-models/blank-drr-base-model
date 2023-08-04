@@ -1,0 +1,2 @@
+namespace bank.sample
+version "${project.version}"
