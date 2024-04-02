@@ -228,11 +228,6 @@
                 <version>${rosetta.bundle.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.regnosys</groupId>
-                <artifactId>rosetta-reports</artifactId>
-                <version>${rosetta.bundle.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
