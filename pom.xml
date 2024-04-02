@@ -15,12 +15,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>4.0.0-dev.35</drr.version>
-        <rosetta.bundle.version>10.0.0</rosetta.bundle.version>
-        <rosetta.dsl.version>9.3.0</rosetta.dsl.version>
+        <drr.version>5.0.0-dev.25</drr.version>
+        <rosetta.bundle.version>10.15.4</rosetta.bundle.version>
+        <rosetta.dsl.version>9.7.0</rosetta.dsl.version>
 
-        <mockito.version>5.1.0</mockito.version>
-        <commons-csv.version>1.8</commons-csv.version>
+        <mockito.version>5.1.1</mockito.version>
+        <commons-csv.version>1.10.0</commons-csv.version>
 
         <!-- remove once common moved to parent START -->
         <guava.version>32.0.1-jre</guava.version>
