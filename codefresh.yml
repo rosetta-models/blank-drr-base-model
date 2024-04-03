@@ -91,6 +91,6 @@ steps:
           isRelease: "${{TAG_REPO}}"
     commands:
       - echo This is a release build, tag repos with release name [${{TAG_NAME}}]
-      - git fetch --prune https://${{ROSETTA_MODELS_USER}}:${{ROSETTA_MODELS_PWD}}@github.com/rosetta-models/bank-drr.git "+refs/tags/*:refs/tags/*"
+      - git fetch --prune https://${{ROSETTA_MODELS_USER}}:${{ROSETTA_MODELS_PWD}}@github.com/${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}.git "+refs/tags/*:refs/tags/*"
       - git tag ${{TAG_NAME}}
-      - git push https://${{ROSETTA_MODELS_USER}}:${{ROSETTA_MODELS_PWD}}@github.com/rosetta-models/bank-drr.git ${{TAG_NAME}}
+      - git push https://${{ROSETTA_MODELS_USER}}:${{ROSETTA_MODELS_PWD}}@github.com/${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}.git ${{TAG_NAME}}
