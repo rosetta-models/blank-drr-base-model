@@ -21,11 +21,8 @@
 
         <xtext.version>2.27.0</xtext.version>
         <guava.version>32.0.1-jre</guava.version>
-        <gson.version>2.10.1</gson.version>
 
         <commons-csv.version>1.8</commons-csv.version>
-        <jetty.version>9.4.3.v20170317</jetty.version>
-        <httpclient5.version>5.1.3</httpclient5.version>
         <java-diff-utils.version>4.12</java-diff-utils.version>
 
         <junit.version>5.9.1</junit.version>
@@ -113,12 +110,6 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk8</artifactId>
                 <version>${kotlin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-test-junit</artifactId>
-                <version>${kotlin.version}</version>
-                <scope>test</scope>
             </dependency>
             <!-- test -->
             <dependency>
