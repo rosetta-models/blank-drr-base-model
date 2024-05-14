@@ -20,9 +20,27 @@
         </dependency>
         <dependency>
             <groupId>com.regnosys</groupId>
+            <artifactId>rosetta-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.regnosys</groupId>
+            <artifactId>rosetta-testing</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.regnosys</groupId>
             <artifactId>ingest-test-framework</artifactId>
             <version>${rosetta.bundle.version}</version>
             <!--            <scope>test</scope>-->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.regnosys.rosetta</groupId>
+                    <artifactId>com.regnosys.rosetta.xcore</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.osgi</groupId>
+                    <artifactId>org.osgi.service.prefs</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -30,14 +48,10 @@
             <version>${commons-csv.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.regnosys</groupId>
-            <artifactId>rosetta-testing</artifactId>
-            <version>${rosetta.bundle.version}</version>
+            <groupId>io.github.java-diff-utils</groupId>
+            <artifactId>java-diff-utils</artifactId>
+            <version>${java-diff-utils.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.regnosys</groupId>
-            <artifactId>rosetta-common</artifactId>
         </dependency>
     </dependencies>
 
@@ -69,7 +83,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <jvmTarget>11</jvmTarget>
+                    <jvmTarget>${java.version}</jvmTarget>
                 </configuration>
             </plugin>
             <plugin>
