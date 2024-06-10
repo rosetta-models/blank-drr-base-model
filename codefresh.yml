@@ -72,7 +72,6 @@ steps:
     commands:
       - mvn ${{MVN_SET_VERSION}}
       - mvn clean install
-      - zip -r examples/target/examples-${{RELEASE_NAME}}.zip ./examples/ -x "*.git/*" -x "*.versionsBackup*" -x "examples/target/*"
       - mvn deploy
 
   NotifySlackOnFail:
