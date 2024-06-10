@@ -216,9 +216,12 @@
 
     <distributionManagement>
         <repository>
-            <id>snapshots</id>
-            <name>libs-snapshots</name>
-            <url>https://regnosys.jfrog.io/regnosys/libs-snapshot-local</url>
+            <id>artifact-registry-bank</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
         </repository>
+        <snapshotRepository>
+            <id>artifact-registry-bank-snapshot</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven-snapshot</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
