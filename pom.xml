@@ -7,7 +7,7 @@
     <groupId>com.bank.drr</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.0.master</version>
+    <version>0.0.0.master-SNAPSHOT</version>
     <modules>
         <module>rosetta-source</module>
         <module>tests</module>
@@ -15,8 +15,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>5.0.0-dev.70</drr.version>
-        <rosetta.bundle.version>11.7.0</rosetta.bundle.version>
+        <drr.version>5.0.0-dev.72</drr.version>
+        <rosetta.bundle.version>11.7.7</rosetta.bundle.version>
         <rosetta.dsl.version>9.8.5</rosetta.dsl.version>
 
         <xtext.version>2.27.0</xtext.version>
@@ -169,22 +169,6 @@
         </repository>
     </repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>regnosys-artifactory-snapshots</id>
-            <name>REGnosys Public Snapshots</name>
-            <url>https://regnosys.jfrog.io/regnosys/libs-snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>regnosys-artifactory-releases</id>
-            <name>REGnosys Public Releases</name>
-            <url>https://regnosys.jfrog.io/regnosys/libs-release</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <build>
         <plugins>
             <plugin>
@@ -221,13 +205,23 @@
                 </executions>
             </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>com.google.cloud.artifactregistry</groupId>
+                <artifactId>artifactregistry-maven-wagon</artifactId>
+                <version>2.2.1</version>
+            </extension>
+        </extensions>
     </build>
 
     <distributionManagement>
         <repository>
-            <id>snapshots</id>
-            <name>libs-snapshots</name>
-            <url>https://regnosys.jfrog.io/regnosys/libs-snapshot-local</url>
+            <id>artifact-registry-bank</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
         </repository>
+        <snapshotRepository>
+            <id>artifact-registry-bank-snapshot</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven-snapshot</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
