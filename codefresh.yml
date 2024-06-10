@@ -39,7 +39,7 @@ steps:
         all:
           releaseNameNotDefined: "${{TAG_REPO}} == false"
     commands:
-      - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}
+      - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}-SNAPSHOT
 
   ReleaseProperties:
     title: Setup release build
