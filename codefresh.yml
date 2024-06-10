@@ -11,6 +11,14 @@ steps:
     repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
     revision: "${{CF_REVISION}}"
 
+  BuildProperties:
+    title: Setup shared build properties
+    image: alpine
+    commands:
+      - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa
+      - cf_export GOOGLE_APPLICATION_CREDENTIALS="${{CF_VOLUME_PATH}}"/sa
+      - rm -rf /codefresh/volume/.m2/com/regnosys
+
   TagReleaseName:
     stage: 'build'
     title: Setup RELEASE_NAME variable with tag
@@ -33,19 +41,39 @@ steps:
     commands:
       - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}
 
+  ReleaseProperties:
+    title: Setup release build
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{TAG_REPO}} == true"
+    commands:
+      - cf_export MVN_SET_VERSION="versions:set -DnewVersion=${{RELEASE_NAME}}"
+
+  BranchProperties:
+    title: Setup branch build
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{TAG_REPO}} == false"
+    commands:
+      - cf_export MVN_SET_VERSION="versions:set -DnewVersion=${{RELEASE_NAME}}"
+
   Build:
     stage: 'build'
     title: Maven build
     fail_fast: false
     no_cache: true
     no_cf_cache: true
-    image: regnosys-docker-registry.jfrog.io/regnosys/mvn-docker-build:java-11
+    image: maven:3.8.5-openjdk-17
     working_directory: ./
     commands:
-      - rm -rf ${{CF_VOLUME_PATH}}/.m2/com/regnosys ${{CF_VOLUME_PATH}}/.m2/com/isda
-      - mvn -s /settings.xml versions:set -DnewVersion=${{RELEASE_NAME}}
-      - mvn -U -s /settings.xml clean install
-      - mvn -U -s /settings.xml deploy
+      - mvn ${{MVN_SET_VERSION}}
+      - mvn clean install
+      - zip -r examples/target/examples-${{RELEASE_NAME}}.zip ./examples/ -x "*.git/*" -x "*.versionsBackup*" -x "examples/target/*"
+      - mvn deploy
 
   NotifySlackOnFail:
     stage: 'finalise'
