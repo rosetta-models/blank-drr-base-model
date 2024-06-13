@@ -155,16 +155,6 @@
 
     <repositories>
         <repository>
-            <id>artifact-registry</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/public-maven</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
             <id>artifact-registry-bank</id>
             <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
             <releases>
