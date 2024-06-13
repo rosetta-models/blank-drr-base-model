@@ -155,17 +155,34 @@
 
     <repositories>
         <repository>
-            <id>regnosys-artifactory-snapshots</id>
-            <name>REGnosys Public Snapshots</name>
-            <url>https://regnosys.jfrog.io/regnosys/libs-snapshot</url>
-            <snapshots>
+            <id>artifact-registry</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/public-maven</url>
+            <releases>
                 <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
         <repository>
-            <id>regnosys-artifactory-releases</id>
-            <name>REGnosys Public Releases</name>
-            <url>https://regnosys.jfrog.io/regnosys/libs-release</url>
+            <id>artifact-registry-bank</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>artifact-registry-bank-snapshot</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven-snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
