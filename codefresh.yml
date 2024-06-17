@@ -11,14 +11,6 @@ steps:
     repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
     revision: "${{CF_REVISION}}"
 
-  BuildProperties:
-    title: Setup shared build properties
-    image: alpine
-    commands:
-      - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa
-      - cf_export GOOGLE_APPLICATION_CREDENTIALS="${{CF_VOLUME_PATH}}"/sa
-      - rm -rf /codefresh/volume/.m2/com/regnosys
-
   TagReleaseName:
     stage: 'build'
     title: Setup RELEASE_NAME variable with tag
@@ -65,23 +57,22 @@ steps:
     stage: 'build'
     title: Maven build
     fail_fast: false
-    no_cache: true
-    no_cf_cache: true
     image: maven:3.8.5-openjdk-17
     working_directory: ./
     commands:
-      - mvn ${{MVN_SET_VERSION}}
-      - mvn clean install
-      - mvn deploy
+      - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa
+      - export GOOGLE_APPLICATION_CREDENTIALS="${{CF_VOLUME_PATH}}"/sa
+      - mvn versions:set -DnewVersion=${{RELEASE_NAME}}
+      - mvn -U clean deploy
 
   NotifySlackOnFail:
     stage: 'finalise'
-    title: Trigger Slack dev channel notification if master build failed
+    title: Trigger Slack dev channel notification if main build failed
     image: codefresh/cli
     when:
       branch:
         only:
-          - master
+          - main
       condition:
         any:
           buildNormalFailed: steps.Build.result == 'error'
