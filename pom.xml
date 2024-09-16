@@ -38,7 +38,7 @@
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
+        <maven-dependency-plugin.version>3.7.0</maven-dependency-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
@@ -155,8 +155,8 @@
 
     <repositories>
         <repository>
-            <id>artifact-registry-bank</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
+            <id>isda-maven</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/isda-maven</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -165,13 +165,13 @@
             </snapshots>
         </repository>
         <repository>
-            <id>artifact-registry-bank-snapshot</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven-snapshot</url>
+            <id>public-maven</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/public-maven</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
