@@ -1,4 +1,4 @@
-namespace bank.datamodel.enrichment
+namespace bank.enrichment
 version "${project.version}"
 
 import drr.regulation.common.*

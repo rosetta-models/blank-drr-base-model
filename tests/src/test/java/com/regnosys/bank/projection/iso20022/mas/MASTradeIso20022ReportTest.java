@@ -35,7 +35,8 @@ public class MASTradeIso20022ReportTest {
     }
 
     private static Stream<Arguments> inputFiles() {
-        return testExtension.getArguments()
-                .filter(testPack -> testPack.get()[1].toString().startsWith("test-pack-projection-mas-trade-report-to-iso20022-trade-bank"));
+        return testExtension.getArguments();
+        //TODO: we should not be doing this. This is to fileter out the test packs that we want to run
+//                .filter(testPack -> testPack.get()[1].toString().startsWith("test-pack-projection-mas-trade-report-to-iso20022-trade-bank"));
     }
 }

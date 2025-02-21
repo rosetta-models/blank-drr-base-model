@@ -1,2 +1,0 @@
-namespace bank.datamodel
-version ${project.version}

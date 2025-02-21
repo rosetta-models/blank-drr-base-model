@@ -1,7 +1,7 @@
 package com.regnosys.bank.testpack;
 
-import bank.datamodel.enrichment.functions.Enrich_ReportableEventToTransactionReportInstruction;
-import bank.datamodel.enrichment.functions.Enrich_ValuationReportInstructionWithReportingSide;
+import bank.enrichment.functions.Enrich_ReportableEventToTransactionReportInstruction;
+import bank.enrichment.functions.Enrich_ValuationReportInstructionWithReportingSide;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.regnosys.bank.report.ReportTestRuntimeModule;
