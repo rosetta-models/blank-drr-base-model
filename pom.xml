@@ -15,9 +15,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>6.0.0-dev.80</drr.version>
-        <rosetta.bundle.version>11.24.2</rosetta.bundle.version>
-        <rosetta.dsl.version>9.20.0</rosetta.dsl.version>
+        <drr.version>6.0.0-dev.43</drr.version>
+        <finos.cdm.version>5.20.0</finos.cdm.version>
+        <iso20022.version>1.16.0</iso20022.version>
+        <rosetta.bundle.version>11.40.0</rosetta.bundle.version>
+        <rosetta.dsl.version>9.34.2</rosetta.dsl.version>
 
         <xtext.version>2.27.0</xtext.version>
         <guava.version>32.0.1-jre</guava.version>
@@ -193,7 +195,7 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <forkCount>2</forkCount>
-                    <argLine>-Xss16m -Xmx1G</argLine>
+                    <argLine>-Xss16m -Xmx3000m</argLine>
                     <trimStackTrace>false</trimStackTrace>
                 </configuration>
             </plugin>

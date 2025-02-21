@@ -1,0 +1,22 @@
+namespace bank.datamodel.enrichment
+version "${project.version}"
+
+import drr.regulation.common.*
+
+annotation enrichment:
+
+func Enrich_ReportableEventToTransactionReportInstruction:
+[enrichment]
+inputs:
+    reportableEvent drr.regulation.common.ReportableEvent (1..1)
+output:
+    transactionReportInstruction drr.regulation.common.TransactionReportInstruction (1..1)
+
+func Enrich_ValuationReportInstructionWithReportingSide:
+[enrichment]
+inputs:
+    valuationReportInstruction ValuationReportInstruction (1..1)
+output:
+    enrichedValuationReportInstruction ValuationReportInstruction (1..1)
+
+

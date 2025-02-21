@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class ValidateNamespaceTest {
    @Test
     void validateFileNamesMatchNamespace() throws IOException {

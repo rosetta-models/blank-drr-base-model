@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- By default, encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%.9thread] %logger{5} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+   <!-- <logger name="com.regnosys.rosetta.common.serialisation.AbstractJsonDataLoader" level="DEBUG"/>-->
+<!--    <logger name="com.regnosys.rosetta.translate.CompilerToClasses" level="DEBUG"/>-->
+<!--    <logger name="com.regnosys.rosetta.common.translation.MappingProcessorStep" level="DEBUG"/>-->
+    <!--    <logger name="com.regnosys.rosetta.translate.ParserParent" level="DEBUG" />-->
+    <logger name="com.regnosys.rosetta.common.validation.ValidationReport" level="OFF"/>
+<!--    <logger name="com.regnosys.testing.transform.TransformTestExtension" level="OFF"/>-->
+<!--    <logger name="com.regnosys.testing.testpack.TestPackFunctionRunnerImpl" level="OFF"/>-->
+<!--    <logger name="cdm.enrichment.functions.MockedJsonDataProvider" level="DEBUG"/>-->
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
