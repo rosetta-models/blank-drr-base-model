@@ -1,2 +1,2 @@
-namespace bank.mapping.datamodel
+namespace template.mapping.datamodel
 version "${project.version}"

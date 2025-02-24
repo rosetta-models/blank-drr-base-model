@@ -1,2 +1,2 @@
-namespace bank.mapping.datamodel.reportableevent
+namespace template.mapping.datamodel.reportableevent
 version "${project.version}"

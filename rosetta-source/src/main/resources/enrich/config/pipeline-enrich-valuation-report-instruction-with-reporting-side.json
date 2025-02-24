@@ -1,0 +1,10 @@
+{
+  "id" : "pipeline-enrich-valuation-report-instruction-with-reporting-side",
+  "name" : "Valuation Report Instruction With Reporting Side",
+  "transform" : {
+    "type" : "ENRICH",
+    "function" : "bank.enrichment.functions.Enrich_ValuationReportInstructionWithReportingSide",
+    "inputType" : "drr.regulation.common.ValuationReportInstruction",
+    "outputType" : "drr.regulation.common.ValuationReportInstruction"
+  }
+}

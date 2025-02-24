@@ -1,2 +1,2 @@
-namespace bank.sample
+namespace template.sample
 version "${project.version}"

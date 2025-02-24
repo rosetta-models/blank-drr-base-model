@@ -1,4 +1,4 @@
-namespace bank.enrichment
+namespace template.enrichment
 version "${project.version}"
 
 import drr.regulation.common.*

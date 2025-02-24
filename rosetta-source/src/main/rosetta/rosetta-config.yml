@@ -1,9 +1,9 @@
 model:
-  name: bank
+  name: template
 dependencies:
 generators:
   namespaces:
-    - bank.*
+    - template.*
     - com.rosetta.model
   tabulators:
     types:
