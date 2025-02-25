@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>parent</artifactId>
-        <groupId>com.bank.drr</groupId>
+        <groupId>com.placeholder.drr</groupId>
         <version>0.0.0.master-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -98,7 +98,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/classes/bank/rosetta</outputDirectory>
+                            <outputDirectory>${project.build.directory}/classes/placeholder/rosetta</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${project.build.directory}/parent-dependency/drr/rosetta</directory>
@@ -150,7 +150,7 @@
                         </goals>
                         <configuration>
                             <sourceRoots>
-                                <sourceRoot>${project.build.directory}/classes/bank/rosetta</sourceRoot>
+                                <sourceRoot>${project.build.directory}/classes/placeholder/rosetta</sourceRoot>
                             </sourceRoots>
                             <classPathLookupFilter>.*com\.regnosys\.rosetta.*</classPathLookupFilter>
                             <languages>

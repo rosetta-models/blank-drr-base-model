@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bank.drr</groupId>
+    <groupId>com.placeholder.drr</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>0.0.0.master-SNAPSHOT</version>
@@ -16,7 +16,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <drr.version>6.0.0-dev.44</drr.version>
-        <iso20022.version>1.16.0</iso20022.version>
         <rosetta.bundle.version>11.40.0</rosetta.bundle.version>
         <rosetta.dsl.version>9.34.2</rosetta.dsl.version>
 
@@ -224,12 +223,12 @@
 
     <distributionManagement>
         <repository>
-            <id>artifact-registry-bank</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
+            <id>artifact-registry-placeholder</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/placeholder-maven</url>
         </repository>
         <snapshotRepository>
-            <id>artifact-registry-bank-snapshot</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven-snapshot</url>
+            <id>artifact-registry-placeholder-snapshot</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/placeholder-maven-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 </project>

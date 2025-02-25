@@ -1,4 +1,4 @@
-namespace template.enrichment
+namespace placeholder.enrichment
 version "${project.version}"
 
 import drr.regulation.common.*
@@ -15,7 +15,7 @@ output:
 func Enrich_ValuationReportInstructionWithReportingSide:
 [enrichment]
 inputs:
-    valuationReportInstruction ValuationReportInstruction (1..1)
+    reportableValuation ReportableValuation (1..1)
 output:
     enrichedValuationReportInstruction ValuationReportInstruction (1..1)
 

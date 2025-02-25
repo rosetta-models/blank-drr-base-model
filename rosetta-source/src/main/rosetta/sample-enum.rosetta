@@ -1,2 +1,2 @@
-namespace template.sample
+namespace placeholder.sample
 version "${project.version}"

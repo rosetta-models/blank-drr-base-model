@@ -1,0 +1,2 @@
+namespace placeholder.mapping.templatedatamodel
+version "${project.version}"

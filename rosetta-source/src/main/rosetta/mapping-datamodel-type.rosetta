@@ -1,2 +1,0 @@
-namespace template.mapping.datamodel
-version "${project.version}"

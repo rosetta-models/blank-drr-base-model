@@ -1,0 +1,16 @@
+model:
+  name: placeholder
+dependencies:
+generators:
+  namespaces:
+    - placeholder.*
+    - com.rosetta.model
+  tabulators:
+    types:
+      - cdm.event.workflow.WorkflowStep
+      - cdm.event.common.TradeState
+      - drr.regulation.common.ReportableEvent
+    annotations:
+      - projection
+      - enrichment
+      - ingestion

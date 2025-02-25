@@ -1,2 +1,0 @@
-namespace template.mapping.datamodel.reportableevent
-version "${project.version}"
