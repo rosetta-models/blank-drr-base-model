@@ -21,6 +21,7 @@ public class MASTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<MASTradeReportFunction> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-report-BANKABC-mas-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     MASTradeReportFunction.class);
@@ -36,7 +37,6 @@ public class MASTradeReportTest {
 
     @SuppressWarnings("unused")//used by the junit parameterized test
     private static Stream<Arguments> inputFiles() {
-        List<Arguments> arguments = testExtension.getArguments().collect(Collectors.toList());
-        return arguments.stream();
+        return testExtension.getArguments();
     }
 }

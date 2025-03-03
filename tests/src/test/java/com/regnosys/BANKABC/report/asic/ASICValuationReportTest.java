@@ -18,6 +18,7 @@ public class ASICValuationReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICValuationReportFunction> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-report-BANKABC-asic-valuation",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICValuationReportFunction.class);
@@ -34,7 +35,5 @@ public class ASICValuationReportTest {
     @SuppressWarnings("unused")//used by the junit parameterized test
     private static Stream<Arguments> inputFiles() {
         return testExtension.getArguments();
-        //TODO: we should not be doing this. This is to fileter out the test packs that we want to run
-//                .filter(testPack -> testPack.get()[1].toString().startsWith("test-pack-report-asic-valuation-asic-valuation"));
     }
 }

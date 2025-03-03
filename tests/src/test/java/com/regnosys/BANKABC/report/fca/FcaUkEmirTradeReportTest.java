@@ -18,6 +18,7 @@ public class FcaUkEmirTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<FCAUKEMIRTradeReportFunction> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-report-BANKABC-fca-ukemir-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     FCAUKEMIRTradeReportFunction.class);

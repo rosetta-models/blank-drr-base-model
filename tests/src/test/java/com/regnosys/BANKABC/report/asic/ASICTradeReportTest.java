@@ -18,6 +18,7 @@ public class ASICTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICTradeReportFunction> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-report-BANKABC-asic-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICTradeReportFunction.class);

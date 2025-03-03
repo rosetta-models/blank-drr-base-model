@@ -18,6 +18,7 @@ public class JFSATradeReportTest {
     @RegisterExtension
     static TransformTestExtension<JFSATradeReportFunction> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-report-BANKABC-jfsa-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     JFSATradeReportFunction.class);

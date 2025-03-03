@@ -19,6 +19,7 @@ public class JfsaMarginIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_JFSARewriteMarginReportToIso20022> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-projection-BANKABC-jfsa-rewrite-margin-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_JFSARewriteMarginReportToIso20022.class)
