@@ -1,8 +1,8 @@
-package com.regnosys.bank;
+package com.regnosys.BANKABC;
 
 import com.regnosys.drr.DrrRuntimeModule;
 
-public class BankRuntimeModule extends DrrRuntimeModule {
+public class BANKABCRuntimeModule extends DrrRuntimeModule {
     @Override
     protected void configure() {
         super.configure();

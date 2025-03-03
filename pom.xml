@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bank.drr</groupId>
+    <groupId>com.placeholder.drr</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>0.0.0.master-SNAPSHOT</version>
@@ -15,9 +15,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>6.0.0-dev.80</drr.version>
-        <rosetta.bundle.version>11.24.2</rosetta.bundle.version>
-        <rosetta.dsl.version>9.20.0</rosetta.dsl.version>
+        <drr.version>6.0.0-dev.46</drr.version>
+        <rosetta.bundle.version>11.47.0</rosetta.bundle.version>
+        <rosetta.dsl.version>9.34.2</rosetta.dsl.version>
 
         <xtext.version>2.27.0</xtext.version>
         <guava.version>32.0.1-jre</guava.version>
@@ -30,7 +30,6 @@
         <mockito.version>5.1.1</mockito.version>
         <hamcrest.version>2.2</hamcrest.version>
 
-        <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
         <kotlin.version>1.9.23</kotlin.version>
 
@@ -193,7 +192,7 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <forkCount>2</forkCount>
-                    <argLine>-Xss16m -Xmx1G</argLine>
+                    <argLine>-Xss16m -Xmx3000m</argLine>
                     <trimStackTrace>false</trimStackTrace>
                 </configuration>
             </plugin>
@@ -223,12 +222,12 @@
 
     <distributionManagement>
         <repository>
-            <id>artifact-registry-bank</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven</url>
+            <id>artifact-registry-placeholder</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/placeholder-maven</url>
         </repository>
         <snapshotRepository>
-            <id>artifact-registry-bank-snapshot</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/bank-maven-snapshot</url>
+            <id>artifact-registry-placeholder-snapshot</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/placeholder-maven-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 </project>

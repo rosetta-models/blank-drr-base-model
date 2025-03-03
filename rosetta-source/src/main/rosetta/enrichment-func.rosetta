@@ -1,0 +1,28 @@
+namespace BANKABC.enrichment
+version "${project.version}"
+
+import drr.regulation.common.*
+
+annotation enrichment:
+
+func Enrich_ReportableEventToTransactionReportInstruction:
+[enrichment]
+inputs:
+    reportableEvent drr.regulation.common.ReportableEvent (1..1)
+output:
+    transactionReportInstruction drr.regulation.common.TransactionReportInstruction (1..1)
+
+func Enrich_ReportableValuationToValuationReportInstruction:
+[enrichment]
+inputs:
+    reportableValuation ReportableValuation (1..1)
+output:
+    enrichedValuationReportInstruction ValuationReportInstruction (1..1)
+
+func Enrich_CollateralReportInstructionWithReportableCollateralAndReportingSide:
+[enrichment]
+inputs:
+    collateralReportInstruction CollateralReportInstruction (1..1)
+    reportingSide ReportingSide (1..1)
+output:
+    enrichedCollateralReportInstruction CollateralReportInstruction (1..1)

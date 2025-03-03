@@ -57,7 +57,7 @@ steps:
     stage: 'build'
     title: Maven build
     fail_fast: false
-    image: maven:3.8.5-openjdk-17
+    image: maven:3.9.6-openjdk-21
     working_directory: ./
     commands:
       - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa

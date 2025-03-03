@@ -1,4 +1,4 @@
-package com.regnosys.bank;
+package com.regnosys.BANKABC;
 
 import cdm.base.datetime.functions.Now;
 import com.regnosys.rosetta.common.model.FunctionMemoisingModuleBuilder;
@@ -15,9 +15,10 @@ import java.time.ZonedDateTime;
 
 /**
  * Runtime module that overrides the Now function to return a fixed date time which can be used in expectations.
+ * BANKABC should be replaced with the model name.
  */
-@ModuleConfig(model = "BANK", type = "Rosetta")
-public class BankRuntimeModuleTesting extends BankRuntimeModule {
+@ModuleConfig(model = "BANKABC_DRR", type = "Rosetta")
+public class BANKABCRuntimeModuleTesting extends BANKABCRuntimeModule {
     @Override
     protected void configure() {
         super.configure();
