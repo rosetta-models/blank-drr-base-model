@@ -1,9 +1,9 @@
 model:
-  name: placeholder
+  name: BANKABC
 dependencies:
 generators:
   namespaces:
-    - placeholder.*
+    - BANKABC.*
     - com.rosetta.model
   tabulators:
     types:

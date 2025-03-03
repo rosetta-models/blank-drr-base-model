@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ValidateNamespaceTest {
    @Test
     void validateFileNamesMatchNamespace() throws IOException {
-        String modelShortName = "placeholder";
+        String modelShortName = "BANKABC";
         Path path = Paths.get("src/main/rosetta");
         RosettaFileNameValidator validator = new RosettaFileNameValidator(modelShortName, path, null);
 

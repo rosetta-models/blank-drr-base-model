@@ -1,0 +1,2 @@
+namespace BANKABC.mapping.BANKABCdatamodel.reportableevent
+version "${project.version}"

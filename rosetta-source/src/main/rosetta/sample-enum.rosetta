@@ -1,2 +1,2 @@
-namespace placeholder.sample
+namespace BANKABC.sample
 version "${project.version}"

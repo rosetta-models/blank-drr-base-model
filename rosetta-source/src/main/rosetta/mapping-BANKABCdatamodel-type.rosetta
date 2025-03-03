@@ -1,0 +1,2 @@
+namespace BANKABC.mapping.BANKABCdatamodel
+version "${project.version}"

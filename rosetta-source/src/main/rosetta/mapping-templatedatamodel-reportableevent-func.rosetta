@@ -1,2 +1,0 @@
-namespace placeholder.mapping.templatedatamodel.reportableevent
-version "${project.version}"
