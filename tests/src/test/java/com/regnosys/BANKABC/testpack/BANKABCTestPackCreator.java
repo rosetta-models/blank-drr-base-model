@@ -20,11 +20,9 @@ import drr.projection.iso20022.jfsa.rewrite.trade.functions.Project_JFSARewriteT
 import drr.projection.iso20022.mas.rewrite.margin.functions.Project_MASMarginReportToIso20022;
 import drr.projection.iso20022.mas.rewrite.trade.functions.Project_MASTradeReportToIso20022;
 import drr.projection.iso20022.mas.rewrite.valuation.functions.Project_MASValuationReportToIso20022;
-import drr.regulation.asic.rewrite.margin.ASICMarginReport;
 import drr.regulation.asic.rewrite.margin.reports.ASICMarginReportFunction;
 import drr.regulation.asic.rewrite.trade.reports.ASICTradeReportFunction;
 import drr.regulation.asic.rewrite.valuation.reports.ASICValuationReportFunction;
-import drr.regulation.csa.rewrite.trade.reports.CSATradeReportFunction;
 import drr.regulation.esma.emir.refit.margin.reports.ESMAEMIRMarginReportFunction;
 import drr.regulation.esma.emir.refit.trade.reports.ESMAEMIRTradeReportFunction;
 import drr.regulation.fca.ukemir.refit.margin.reports.FCAUKEMIRMarginReportFunction;
@@ -129,7 +127,5 @@ public class BANKABCTestPackCreator {
 
                 .withXmlConfigMap(TYPE_TO_XML_CONFIG_MAP)
                 .withXmlSchemaMap(TYPE_TO_SCHEMA_MAP);
-
     }
-
 }
