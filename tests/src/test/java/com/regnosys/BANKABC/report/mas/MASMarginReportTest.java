@@ -1,9 +1,10 @@
-package com.regnosys.BANKABC.report.esma;
+package com.regnosys.BANKABC.report.mas;
 
 import com.regnosys.BANKABC.report.ReportTestRuntimeModule;
 import com.regnosys.rosetta.common.transform.TestPackModel;
 import com.regnosys.testing.transform.TransformTestExtension;
 import drr.regulation.esma.emir.refit.margin.reports.ESMAEMIRMarginReportFunction;
+import drr.regulation.mas.rewrite.margin.reports.MASMarginReportFunction;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -13,22 +14,22 @@ import java.util.stream.Stream;
 
 import static com.regnosys.rosetta.common.transform.TestPackUtils.REPORT_CONFIG_PATH;
 
-public class EsmaEmirMarginReportTest {
+public class MASMarginReportTest {
 
     @RegisterExtension
-    static TransformTestExtension<ESMAEMIRMarginReportFunction> testExtension =
+    static TransformTestExtension<MASMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-esma-emir-margin",
+                    "pipeline-report-BANKABC-mas-margin",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
-                    ESMAEMIRMarginReportFunction.class);
+                    MASMarginReportFunction.class);
 
     @ParameterizedTest(name = "{0}")
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
                    TestPackModel.SampleModel sampleModel,
-                   ESMAEMIRMarginReportFunction func) {
+                   MASMarginReportFunction func) {
         testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
     }
 

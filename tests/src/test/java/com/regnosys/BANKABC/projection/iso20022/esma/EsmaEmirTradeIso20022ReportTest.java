@@ -21,6 +21,7 @@ public class EsmaEmirTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_EsmaEmirTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
+                    "pipeline-projection-BANKABC-esma-emir-trade-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_EsmaEmirTradeReportToIso20022.class)
