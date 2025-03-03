@@ -14,7 +14,7 @@ import static com.regnosys.rosetta.common.transform.TransformType.*;
 public class BANKABCPipelineRun {
     private static final Logger LOGGER = LoggerFactory.getLogger(BANKABCPipelineRun.class);
 
-    private static final Path PLACEHOLDER_FILE_DROP = Path.of("placeholder-file-drop");
+    private static final Path BANKABC_FILE_DROP = Path.of("BANKABC-file-drop");
 
     public static final String PREFIX = "PLACEHOLDER";
 
@@ -27,7 +27,7 @@ public class BANKABCPipelineRun {
         Path writePath = expectationDefaults.testWriteBasePath().get();
 
         try {
-            Path placeholderFileDrop = writePath.resolve(PLACEHOLDER_FILE_DROP);
+            Path BANKABCFileDrop = writePath.resolve(BANKABC_FILE_DROP);
             Path enrichPath = writePath.resolve(ENRICH.getResourcePath());
             Path reportPath = writePath.resolve(REPORT.getResourcePath());
             Path projectionPath = writePath.resolve(PROJECTION.getResourcePath());
@@ -40,12 +40,12 @@ public class BANKABCPipelineRun {
             //DrrRuntimeModule
             Injector injector = new ReportTestRuntimeModule.InjectorProvider().getInjector();
 
-            // 2 Runs the FileDropProcessors. placeholder-file-drop/trade --> enrich/input
+            // 2 Runs the FileDropProcessors. BANKABC-file-drop/trade --> enrich/input
             BANKABCReportableEventFileDropProcessor BANKABCReportableEventFileDropProcessor = injector.getInstance(BANKABCReportableEventFileDropProcessor.class);
-            BANKABCReportableEventFileDropProcessor.runFileProcessor(PREFIX, placeholderFileDrop, enrichInputPath);
+            BANKABCReportableEventFileDropProcessor.runFileProcessor(PREFIX, BANKABCFileDrop, enrichInputPath);
             BANKABCValuationFileDropProcessor BANKABCValuationFileDropProcessor = injector.getInstance(BANKABCValuationFileDropProcessor.class);
-            BANKABCValuationFileDropProcessor.runFileProcessor(PREFIX, placeholderFileDrop, enrichInputPath);
-            BANKABCValuationFileDropProcessor.runFileProcessor(PREFIX, placeholderFileDrop, enrichInputPath);
+            BANKABCValuationFileDropProcessor.runFileProcessor(PREFIX, BANKABCFileDrop, enrichInputPath);
+            BANKABCValuationFileDropProcessor.runFileProcessor(PREFIX, BANKABCFileDrop, enrichInputPath);
 
             // 3. Run the TemplateTestPackCreator --> started from regulatory-reporting/input --> everywhere else. Standard.
             BANKABCTestPackCreator creator = injector.getInstance(BANKABCTestPackCreator.class);

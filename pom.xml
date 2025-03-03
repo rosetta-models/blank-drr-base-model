@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.placeholder.drr</groupId>
+    <groupId>com.BANKABC.drr</groupId>
     <artifactId>parent</artifactId>
     <packaging>pom</packaging>
     <version>0.0.0.master-SNAPSHOT</version>
@@ -222,12 +222,12 @@
 
     <distributionManagement>
         <repository>
-            <id>artifact-registry-placeholder</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/placeholder-maven</url>
+            <id>artifact-registry-BANKABC</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/BANKABC-maven</url>
         </repository>
         <snapshotRepository>
-            <id>artifact-registry-placeholder-snapshot</id>
-            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/placeholder-maven-snapshot</url>
+            <id>artifact-registry-BANKABC-snapshot</id>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/BANKABC-maven-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
