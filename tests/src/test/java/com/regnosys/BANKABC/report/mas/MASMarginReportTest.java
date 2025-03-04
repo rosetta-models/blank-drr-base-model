@@ -19,7 +19,7 @@ public class MASMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<MASMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-mas-margin",
+//                    "pipeline-report-BANKABC-mas-margin",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     MASMarginReportFunction.class);

@@ -19,7 +19,7 @@ public class MASValuationReportTest {
     @RegisterExtension
     static TransformTestExtension<MASValuationReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-mas-valuation",
+//                    "pipeline-report-BANKABC-mas-valuation",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     MASValuationReportFunction.class);

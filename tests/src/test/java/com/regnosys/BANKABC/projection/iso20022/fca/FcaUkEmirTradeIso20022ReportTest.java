@@ -19,7 +19,7 @@ public class FcaUkEmirTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_FcaUkEmirTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-projection-BANKABC-fca-uk-emir-trade-report-to-iso20022",
+//                    "pipeline-projection-BANKABC-fca-uk-emir-trade-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_FcaUkEmirTradeReportToIso20022.class)

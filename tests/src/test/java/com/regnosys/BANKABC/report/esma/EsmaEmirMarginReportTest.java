@@ -18,7 +18,7 @@ public class EsmaEmirMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<ESMAEMIRMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-esma-emir-margin",
+//                    "pipeline-report-BANKABC-esma-emir-margin",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ESMAEMIRMarginReportFunction.class);

@@ -18,7 +18,7 @@ public class EsmaEmirTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<ESMAEMIRTradeReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-esma-emir-trade",
+//                    "pipeline-report-BANKABC-esma-emir-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ESMAEMIRTradeReportFunction.class);

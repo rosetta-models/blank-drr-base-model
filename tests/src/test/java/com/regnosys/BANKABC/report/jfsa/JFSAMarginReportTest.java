@@ -18,7 +18,7 @@ public class JFSAMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<JFSAMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-jfsa-margin",
+//                    "pipeline-report-BANKABC-jfsa-margin",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     JFSAMarginReportFunction.class);

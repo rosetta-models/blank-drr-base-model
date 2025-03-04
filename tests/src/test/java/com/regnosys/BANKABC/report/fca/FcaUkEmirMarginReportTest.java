@@ -18,7 +18,7 @@ public class FcaUkEmirMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<FCAUKEMIRMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-fca-ukemir-margin",
+//                    "pipeline-report-BANKABC-fca-ukemir-margin",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     FCAUKEMIRMarginReportFunction.class);

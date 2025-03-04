@@ -19,7 +19,7 @@ public class AsicMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-asic-margin",
+//                    "pipeline-report-BANKABC-asic-margin",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICMarginReportFunction.class);

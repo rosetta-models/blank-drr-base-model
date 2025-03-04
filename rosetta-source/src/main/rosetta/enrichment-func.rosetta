@@ -22,7 +22,7 @@ output:
 func Enrich_CollateralReportInstructionWithReportableCollateralAndReportingSide:
 [enrichment]
 inputs:
-    collateralReportInstruction CollateralReportInstruction (1..1)
+    reportableCollateral ReportableCollateral (1..1)
     reportingSide ReportingSide (1..1)
 output:
     enrichedCollateralReportInstruction CollateralReportInstruction (1..1)

@@ -19,7 +19,7 @@ public class EsmaEmirMarginIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_EsmaEmirMarginReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-projection-BANKABC-esma-emir-margin-report-to-iso20022",
+//                    "pipeline-projection-BANKABC-esma-emir-margin-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_EsmaEmirMarginReportToIso20022.class)

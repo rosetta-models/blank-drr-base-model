@@ -21,7 +21,7 @@ public class MASTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<MASTradeReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-mas-trade",
+//                    "pipeline-report-BANKABC-mas-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     MASTradeReportFunction.class);

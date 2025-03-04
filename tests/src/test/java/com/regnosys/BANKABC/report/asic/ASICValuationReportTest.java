@@ -18,7 +18,7 @@ public class ASICValuationReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICValuationReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-asic-valuation",
+//                    "pipeline-report-BANKABC-asic-valuation",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICValuationReportFunction.class);

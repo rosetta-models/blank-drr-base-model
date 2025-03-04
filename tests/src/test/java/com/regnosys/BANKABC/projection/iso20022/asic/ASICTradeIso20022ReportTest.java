@@ -20,7 +20,7 @@ public class ASICTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_ASICTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-projection-BANKABC-asic-trade-report-to-iso20022",
+//                    "pipeline-projection-BANKABC-asic-trade-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_ASICTradeReportToIso20022.class)
