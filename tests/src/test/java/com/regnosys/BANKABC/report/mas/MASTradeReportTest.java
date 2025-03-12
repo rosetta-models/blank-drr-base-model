@@ -4,6 +4,7 @@ import com.regnosys.BANKABC.report.ReportTestRuntimeModule;
 import com.regnosys.rosetta.common.transform.TestPackModel;
 import com.regnosys.testing.transform.TransformTestExtension;
 import drr.regulation.mas.rewrite.trade.reports.MASTradeReportFunction;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -15,13 +16,12 @@ import java.util.stream.Stream;
 
 import static com.regnosys.rosetta.common.transform.TestPackUtils.REPORT_CONFIG_PATH;
 
+@Disabled("Enable when the test data is available")
 public class MASTradeReportTest {
-
-
     @RegisterExtension
     static TransformTestExtension<MASTradeReportFunction> testExtension =
             new TransformTestExtension<>(
-//                    "pipeline-report-BANKABC-mas-trade",
+                    "pipeline-report-BANKABC-mas-trade",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     MASTradeReportFunction.class);
