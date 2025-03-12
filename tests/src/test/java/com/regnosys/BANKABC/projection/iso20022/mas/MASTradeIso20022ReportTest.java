@@ -20,7 +20,7 @@ public class MASTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_MASTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-//                    "pipeline-projection-BANKABC-mas-trade-report-to-iso20022",
+                    "pipeline-projection-BANKABC-mas-trade-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_MASTradeReportToIso20022.class)
@@ -37,7 +37,5 @@ public class MASTradeIso20022ReportTest {
 
     private static Stream<Arguments> inputFiles() {
         return testExtension.getArguments();
-        //TODO: we should not be doing this. This is to fileter out the test packs that we want to run
-//                .filter(testPack -> testPack.get()[1].toString().startsWith("test-pack-projection-mas-trade-report-to-iso20022-trade-bank"));
     }
 }

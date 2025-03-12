@@ -3,8 +3,6 @@ version "${project.version}"
 
 import drr.regulation.common.*
 
-annotation enrichment:
-
 func Enrich_ReportableEventToTransactionReportInstruction:
 [enrichment]
 inputs:
