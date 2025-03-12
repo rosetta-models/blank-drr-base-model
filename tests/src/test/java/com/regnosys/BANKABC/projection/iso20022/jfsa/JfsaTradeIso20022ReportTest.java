@@ -6,6 +6,7 @@ import com.regnosys.rosetta.common.transform.TestPackModel;
 import com.regnosys.testing.transform.TransformTestExtension;
 import drr.projection.iso20022.jfsa.rewrite.trade.functions.Project_JFSARewriteTradeReportToIso20022;
 import iso20022.Auth030JfsaModelConfig;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -15,11 +16,12 @@ import java.util.stream.Stream;
 
 import static com.regnosys.rosetta.common.transform.TestPackUtils.PROJECTION_CONFIG_PATH_WITHOUT_ISO20022;
 
+@Disabled("Enable when the test data is available")
 public class JfsaTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_JFSARewriteTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-//                    "pipeline-projection-BANKABC-jfsa-rewrite-trade-report-to-iso20022",
+                    "pipeline-projection-BANKABC-jfsa-rewrite-trade-report-to-iso20022",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_JFSARewriteTradeReportToIso20022.class)
