@@ -1,2 +1,2 @@
-namespace BANKABC.mapping.BANKABCdatamodel.reportableevent
+namespace BANKABC.mapping.BANKABCmodel.reportableevent
 version "${project.version}"
