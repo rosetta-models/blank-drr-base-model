@@ -3,6 +3,20 @@ stages:
   - build
   - finalise
 steps:
+  NotifyStart:
+    stage: 'build'
+    title: Trigger Slack dev channel notification
+    type: slack-notifier
+    arguments:
+      SLACK_HOOK_URL: 'https://hooks.slack.com/services/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'
+      SLACK_ATTACHMENTS: '[{
+        "color": "warning",
+        "text": "ACMEBANK DRR Extension release candidate build has just started, no merging to ${{BRANCH}} please"
+      }]'
+      SLACK_TEMPLATE_BODY: ''
+      SLACK_TEMPLATE_FIELDS: ''
+      SLACK_TEXT: ''
+
   main_clone:
     stage: 'build'
     title: Cloning main repository...
