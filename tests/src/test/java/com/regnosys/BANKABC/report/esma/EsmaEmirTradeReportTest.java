@@ -18,7 +18,7 @@ public class EsmaEmirTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<ESMAEMIRTradeReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-esma-emir-trade",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ESMAEMIRTradeReportFunction.class);
@@ -27,9 +27,8 @@ public class EsmaEmirTradeReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   ESMAEMIRTradeReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

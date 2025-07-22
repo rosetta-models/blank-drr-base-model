@@ -20,7 +20,7 @@ public class AsicMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-asic-margin",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICMarginReportFunction.class);
@@ -29,9 +29,8 @@ public class AsicMarginReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   ASICMarginReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

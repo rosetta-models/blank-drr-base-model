@@ -18,7 +18,7 @@ public class ASICTradeReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICTradeReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-asic-trade",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICTradeReportFunction.class);
@@ -27,9 +27,8 @@ public class ASICTradeReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   ASICTradeReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

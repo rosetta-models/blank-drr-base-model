@@ -20,7 +20,7 @@ public class ASICValuationReportTest {
     @RegisterExtension
     static TransformTestExtension<ASICValuationReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-asic-valuation",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICValuationReportFunction.class);
@@ -29,9 +29,8 @@ public class ASICValuationReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   ASICValuationReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

@@ -1,8 +1,8 @@
 package com.regnosys.BANKABC.testpack;
 
-import BANKABC.enrichment.functions.Enrich_CollateralReportInstructionWithReportableCollateralAndReportingSide;
-import BANKABC.enrichment.functions.Enrich_ReportableEventToTransactionReportInstruction;
-import BANKABC.enrichment.functions.Enrich_ReportableValuationToValuationReportInstruction;
+import BANKABC.enrich.functions.Enrich_CollateralReportInstructionWithReportableCollateralAndReportingSide;
+import BANKABC.enrich.functions.Enrich_ReportableEventToTransactionReportInstruction;
+import BANKABC.enrich.functions.Enrich_ReportableValuationToValuationReportInstruction;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.regnosys.BANKABC.report.ReportTestRuntimeModule;

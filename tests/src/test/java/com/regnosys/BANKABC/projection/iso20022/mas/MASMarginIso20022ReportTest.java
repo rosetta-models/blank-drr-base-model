@@ -22,7 +22,7 @@ public class MASMarginIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_MASMarginReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-projection-BANKABC-mas-margin-report-to-iso20022",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_MASMarginReportToIso20022.class)
@@ -32,9 +32,8 @@ public class MASMarginIso20022ReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   Project_MASMarginReportToIso20022 func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     private static Stream<Arguments> inputFiles() {

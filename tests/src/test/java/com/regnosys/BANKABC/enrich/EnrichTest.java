@@ -1,6 +1,6 @@
 package com.regnosys.BANKABC.enrich;
 
-import BANKABC.enrichment.functions.Enrich_ReportableEventToTransactionReportInstruction;
+import BANKABC.enrich.functions.Enrich_ReportableEventToTransactionReportInstruction;
 import com.regnosys.BANKABC.report.ReportTestRuntimeModule;
 import com.regnosys.rosetta.common.transform.TestPackModel;
 import com.regnosys.rosetta.common.transform.TransformType;
@@ -30,9 +30,8 @@ public class EnrichTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   Enrich_ReportableEventToTransactionReportInstruction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     private static Stream<Arguments> inputFiles() {

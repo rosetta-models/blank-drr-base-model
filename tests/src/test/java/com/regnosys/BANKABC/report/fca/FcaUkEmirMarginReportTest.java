@@ -18,7 +18,7 @@ public class FcaUkEmirMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<FCAUKEMIRMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-fca-ukemir-margin",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     FCAUKEMIRMarginReportFunction.class);
@@ -27,9 +27,8 @@ public class FcaUkEmirMarginReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   FCAUKEMIRMarginReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test
