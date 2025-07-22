@@ -15,16 +15,21 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>6.0.0-dev.46</drr.version>
-        <rosetta.bundle.version>11.47.0</rosetta.bundle.version>
-        <rosetta.dsl.version>9.36.6</rosetta.dsl.version>
+        <drr.version>6.3.0</drr.version>
+        <finos.cdm.version>5.25.0</finos.cdm.version>
+        <iso20022.version>1.25.1</iso20022.version>
+        <rosetta.bundle.version>11.73.0</rosetta.bundle.version>
+        <rosetta.dsl.version>9.61.0</rosetta.dsl.version>
 
-        <xtext.version>2.27.0</xtext.version>
-        <guava.version>32.0.1-jre</guava.version>
+        <xtext.version>2.38.0</xtext.version>
+        <guice.version>6.0.0</guice.version>
 
         <commons-csv.version>1.10.0</commons-csv.version>
+        <commons-io.version>2.18.0</commons-io.version>
+
         <java-diff-utils.version>4.12</java-diff-utils.version>
 
+        <guava.version>33.3.1-jre</guava.version>
         <junit.version>5.9.1</junit.version>
         <junit-platform-commons.version>1.9.1</junit-platform-commons.version>
         <mockito.version>5.1.1</mockito.version>
@@ -53,6 +58,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice-bom</artifactId>
+                <version>${guice.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- xtext START -->
             <dependency>
                 <groupId>org.eclipse.xtext</groupId>

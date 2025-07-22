@@ -21,7 +21,7 @@ public class JfsaTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_JFSARewriteTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-projection-BANKABC-jfsa-rewrite-trade-report-to-iso20022",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_JFSARewriteTradeReportToIso20022.class)
@@ -31,9 +31,8 @@ public class JfsaTradeIso20022ReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   Project_JFSARewriteTradeReportToIso20022 func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     private static Stream<Arguments> inputFiles() {

@@ -21,7 +21,7 @@ public class MASMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<MASMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-mas-margin",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     MASMarginReportFunction.class);
@@ -30,9 +30,8 @@ public class MASMarginReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   MASMarginReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

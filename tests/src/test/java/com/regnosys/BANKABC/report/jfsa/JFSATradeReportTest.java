@@ -19,7 +19,7 @@ public class JFSATradeReportTest {
     @RegisterExtension
     static TransformTestExtension<JFSATradeReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-jfsa-trade",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     JFSATradeReportFunction.class);
@@ -28,9 +28,8 @@ public class JFSATradeReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   JFSATradeReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

@@ -27,9 +27,8 @@ public class FcaUkEmirTradeReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   FCAUKEMIRTradeReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test

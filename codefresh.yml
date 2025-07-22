@@ -1,50 +1,19 @@
 version: "1.0"
 stages:
+  - setup
   - build
   - finalise
 steps:
-  NotifyStart:
-    stage: 'build'
-    title: Trigger Slack dev channel notification
-    type: slack-notifier
-    arguments:
-      SLACK_HOOK_URL: 'https://hooks.slack.com/services/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'
-      SLACK_ATTACHMENTS: '[{
-        "color": "warning",
-        "text": "Template DRR Extension release candidate build has just started, no merging to ${{BRANCH}} please"
-      }]'
-      SLACK_TEMPLATE_BODY: ''
-      SLACK_TEMPLATE_FIELDS: ''
-      SLACK_TEXT: ''
-
   main_clone:
-    stage: 'build'
+    stage: 'setup'
     title: Cloning main repository...
     type: git-clone
     git: rosetta-models
     repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
     revision: "${{CF_REVISION}}"
 
-  MvnSettings:
-    stage: 'setup'
-    title: Setup Maven settings
-    image: alpine/git
-    commands:
-      - cf_export MVN_CLI_OPT="-Dmaven.repo.local=\"${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}_m2/repository\""
-
-  TagReleaseName:
-    stage: 'build'
-    title: Setup RELEASE_NAME variable with tag
-    image: alpine/git
-    when:
-      condition:
-        all:
-          releaseNameNotDefined: "${{TAG_REPO}} == true"
-    commands:
-      - cf_export RELEASE_NAME=${{TAG_NAME}}
-
   BranchReleaseName:
-    stage: 'build'
+    stage: 'setup'
     title: Setup RELEASE_NAME variable with branch name
     image: alpine/git
     when:
@@ -54,7 +23,38 @@ steps:
     commands:
       - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}-SNAPSHOT
 
+  TagReleaseName:
+    stage: 'setup'
+    title: Setup RELEASE_NAME variable with tag
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{TAG_REPO}} == true"
+    commands:
+      - cf_export RELEASE_NAME=${{TAG_NAME}}
+
+  MvnSettings:
+    stage: 'setup'
+    title: Setup Maven settings
+    image: alpine/git
+    commands:
+      - cf_export MVN_CLI_OPT="-Dmaven.repo.local=\"${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}_m2/repository\""
+      - echo $MVN_CLI_OPT
+
+  BranchProperties:
+    stage: 'setup'
+    title: Setup branch build
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{TAG_REPO}} == false"
+    commands:
+      - cf_export MVN_SET_VERSION="${{MVN_CLI_OPT}} versions:set -DnewVersion=${{RELEASE_NAME}}"
+
   ReleaseProperties:
+    stage: 'setup'
     title: Setup release build
     image: alpine/git
     when:
@@ -68,21 +68,11 @@ steps:
       - >-
         cf_export GITHUB_API_CURL="curl -L  -X POST -H \"Accept: application/vnd.github+json\" -H \"Authorization: Bearer ${{REGNOSYS_OPS_TOKEN}}\""
 
-  BranchProperties:
-    title: Setup branch build
-    image: alpine/git
-    when:
-      condition:
-        all:
-          releaseNameNotDefined: "${{TAG_REPO}} == false"
-    commands:
-      - cf_export MVN_SET_VERSION="${{MVN_CLI_OPT}} versions:set -DnewVersion=${{RELEASE_NAME}}"
-
   Build:
     stage: 'build'
     title: Maven build
     fail_fast: false
-    image: maven:3.9.9-eclipse-temurin-21-alpine
+    image: maven:3.9.8-eclipse-temurin-21
     working_directory: ./
     commands:
       - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa
@@ -155,3 +145,4 @@ steps:
           "tag_name": "${{RELEASE_NAME}}",
           "generate_release_notes": true
         }'
+

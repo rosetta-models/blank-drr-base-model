@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.BANKABC.drr</groupId>
     <artifactId>tests</artifactId>
 
     <dependencies>
@@ -21,6 +20,11 @@
         <dependency>
             <groupId>com.regnosys</groupId>
             <artifactId>rosetta-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.regnosys</groupId>
+            <artifactId>serialization</artifactId>
+            <version>${rosetta.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>com.regnosys</groupId>
@@ -39,6 +43,10 @@
                 <exclusion>
                     <groupId>org.osgi</groupId>
                     <artifactId>org.osgi.service.prefs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.eclipse.xtext</groupId>
+                    <artifactId>org.eclipse.xtext.ecore</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

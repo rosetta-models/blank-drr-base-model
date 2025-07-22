@@ -20,7 +20,7 @@ public class EsmaEmirMarginReportTest {
     @RegisterExtension
     static TransformTestExtension<ESMAEMIRMarginReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "pipeline-report-BANKABC-esma-emir-margin",
+                    "bankabc",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ESMAEMIRMarginReportFunction.class);
@@ -29,9 +29,8 @@ public class EsmaEmirMarginReportTest {
     @MethodSource("inputFiles")
     void runReport(String testName,
                    String testPackId,
-                   TestPackModel.SampleModel sampleModel,
-                   ESMAEMIRMarginReportFunction func) {
-        testExtension.runTransformAndAssert(testPackId, sampleModel, func::evaluate);
+                   TestPackModel.SampleModel sampleModel) {
+        testExtension.runTransformAndAssert(testPackId, sampleModel);
     }
 
     @SuppressWarnings("unused")//used by the junit parameterized test
