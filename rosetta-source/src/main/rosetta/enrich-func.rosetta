@@ -2,13 +2,14 @@ namespace BANKABC.enrich
 version "${project.version}"
 
 import drr.regulation.common.*
+import drr.base.trade.*
 
 func Enrich_ReportableEventToTransactionReportInstruction:
 [enrich]
 inputs:
-    reportableEvent drr.regulation.common.ReportableEvent (1..1)
+    reportableEvent ReportableEvent (1..1)
 output:
-    transactionReportInstruction drr.regulation.common.TransactionReportInstruction (1..1)
+    transactionReportInstruction TransactionReportInstruction (1..1)
 
 func Enrich_ReportableValuationToValuationReportInstruction:
 [enrich]
@@ -18,7 +19,7 @@ output:
     enrichedValuationReportInstruction ValuationReportInstruction (1..1)
 
 func Enrich_CollateralReportInstructionWithReportableCollateralAndReportingSide:
-[enrich]
+//[enrich]
 inputs:
     reportableCollateral ReportableCollateral (1..1)
     reportingSide ReportingSide (1..1)

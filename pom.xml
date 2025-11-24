@@ -15,11 +15,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>6.3.0</drr.version>
-        <finos.cdm.version>5.25.0</finos.cdm.version>
-        <iso20022.version>1.25.1</iso20022.version>
-        <rosetta.bundle.version>11.73.0</rosetta.bundle.version>
-        <rosetta.dsl.version>9.61.0</rosetta.dsl.version>
+        <drr.version>7.0.0-dev.52</drr.version>
+        <iso20022.version>1.18.0</iso20022.version>
+        <rosetta.dsl.version>9.68.0</rosetta.dsl.version>
+        <rosetta.bundle.version>11.89.3</rosetta.bundle.version>
 
         <xtext.version>2.38.0</xtext.version>
         <guice.version>6.0.0</guice.version>
