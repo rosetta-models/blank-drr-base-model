@@ -31,7 +31,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -149,6 +148,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <rosettaConfig>${project.basedir}/src/main/resources/rosetta-config.yml</rosettaConfig>
                             <sourceRoots>
                                 <sourceRoot>${project.build.directory}/classes/BANKABC/rosetta</sourceRoot>
                             </sourceRoots>
@@ -170,7 +170,6 @@
                 </executions>
             </plugin>
         </plugins>
-
         <pluginManagement>
             <plugins>
                 <plugin>
