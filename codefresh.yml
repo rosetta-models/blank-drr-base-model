@@ -11,14 +11,19 @@ steps:
     image: alpine
     commands:
       - if [[ '${{CF_RELEASE_TAG}}' == *'CF_RELEASE_TAG'* ]]; then cf_export IS_RELEASE=false; else cf_export IS_RELEASE=true; fi
-
-  BuildProperties:
-    image: alpine
+  
+  ReleaseNameForBranch:
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{IS_RELEASE}} == false"
     commands:
-      - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa
-      - cf_export GOOGLE_APPLICATION_CREDENTIALS="${{CF_VOLUME_PATH}}"/sa
+      - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}-SNAPSHOT
 
   ReleaseNameForTag:
+    stage: 'setup'
+    title: Setup RELEASE_NAME variable with tag
     image: alpine/git
     when:
       condition:
@@ -28,20 +33,17 @@ steps:
       - cf_export MVN_BUILD_CMD="clean deploy"
       - cf_export RELEASE_NAME=${{CF_RELEASE_TAG}}
 
-  ReleaseNameForBranch:
+  MvnSettings:
     image: alpine/git
-    when:
-      condition:
-        all:
-          releaseNameNotDefined: "${{IS_RELEASE}} == false"
     commands:
-      - cf_export MVN_BUILD_CMD="clean deploy -U"
-      - export SNAPSHOT_VERSION=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}-SNAPSHOT
-      - cf_export RELEASE_NAME=$SNAPSHOT_VERSION
+      - cf_export MVN_CLI_OPT="-Dmaven.repo.local=\"${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}_m2/repository\""
+      - echo $MVN_CLI_OPT
 
   Build:
-    image: maven:3.9.11-eclipse-temurin-21-alpine
+    image: maven:3.9.11-eclipse-temurin-21
     working_directory: ./
     commands:
-      - cf_export MVN_SET_VERSION="versions:set -DnewVersion=${{RELEASE_NAME}}"
-      - mvn ${{MVN_BUILD_CMD}}
+      - echo "${{ARTIFACT_REGISTRY_SA_KEY}}"|base64 -d>"${{CF_VOLUME_PATH}}"/sa
+      - export GOOGLE_APPLICATION_CREDENTIALS="${{CF_VOLUME_PATH}}"/sa
+      - mvn ${{MVN_CLI_OPT}} versions:set -DnewVersion=${{RELEASE_NAME}}
+      - mvn ${{MVN_CLI_OPT}} clean deploy
