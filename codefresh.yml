@@ -1,5 +1,5 @@
 version: "1.0"
-stages:
+
 steps:
   main_clone:
     type: git-clone
@@ -11,7 +11,7 @@ steps:
     image: alpine
     commands:
       - if [[ '${{CF_RELEASE_TAG}}' == *'CF_RELEASE_TAG'* ]]; then cf_export IS_RELEASE=false; else cf_export IS_RELEASE=true; fi
-  
+
   ReleaseNameForBranch:
     image: alpine/git
     when:
@@ -22,15 +22,12 @@ steps:
       - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}-SNAPSHOT
 
   ReleaseNameForTag:
-    stage: 'setup'
-    title: Setup RELEASE_NAME variable with tag
     image: alpine/git
     when:
       condition:
         all:
           releaseNameNotDefined: "${{IS_RELEASE}} == true"
     commands:
-      - cf_export MVN_BUILD_CMD="clean deploy"
       - cf_export RELEASE_NAME=${{CF_RELEASE_TAG}}
 
   MvnSettings:
