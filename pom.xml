@@ -15,10 +15,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <drr.version>6.18.0</drr.version>
-        <iso20022.version>1.33.1</iso20022.version>
-        <rosetta.dsl.version>9.68.0</rosetta.dsl.version>
-        <rosetta.bundle.version>11.89.3</rosetta.bundle.version>
+        <drr.version>6.32.3</drr.version>
+        <rosetta.dsl.version>9.78.0</rosetta.dsl.version>
+        <rosetta.bundle.version>11.118.1</rosetta.bundle.version>
 
         <xtext.version>2.38.0</xtext.version>
         <guice.version>6.0.0</guice.version>
@@ -36,7 +35,7 @@
 
         <maven.compiler.release>11</maven.compiler.release>
         <java.enforced.version>[21,22)</java.enforced.version>
-        <kotlin.version>1.9.23</kotlin.version>
+        <kotlin.version>2.3.20</kotlin.version>
 
         <!-- Plugins -->
         <maven-enforcer-plugin.version>3.2.1</maven-enforcer-plugin.version>
@@ -201,7 +200,7 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <forkCount>2</forkCount>
-                    <argLine>-Xss16m -Xmx3000m</argLine>
+                    <argLine>-Xss16m -Xmx500m</argLine>
                     <trimStackTrace>false</trimStackTrace>
                 </configuration>
             </plugin>
