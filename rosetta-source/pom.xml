@@ -173,7 +173,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <rosettaConfig>${project.basedir}/src/main/resources/rosetta-config.yml</rosettaConfig>
+                            <runeConfig>${project.basedir}/src/main/resources/rune-config.yml</runeConfig>
                             <sourceRoots>
                                 <sourceRoot>${project.build.directory}/classes/BANKABC/rosetta</sourceRoot>
                             </sourceRoots>
@@ -217,6 +217,11 @@
                             <groupId>com.regnosys.rosetta</groupId>
                             <artifactId>com.regnosys.rosetta.lib</artifactId>
                             <version>${rosetta.dsl.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.google.inject</groupId>
+                            <artifactId>guice</artifactId>
+                            <version>${guice.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
