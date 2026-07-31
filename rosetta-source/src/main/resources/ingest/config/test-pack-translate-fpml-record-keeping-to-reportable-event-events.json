@@ -1,0 +1,226 @@
+{
+  "id" : "test-pack-translate-fpml-record-keeping-to-reportable-event-events",
+  "pipelineId" : "pipeline-translate-BANKABC-fpml-record-keeping-to-reportable-event",
+  "name" : "Events",
+  "samples" : [ {
+    "id" : "clearing-cleared-alpha-trade-03",
+    "name" : "Clearing cleared alpha Trade 03",
+    "inputPath" : "ingest/input/events/Clearing-cleared-alpha-Trade-03.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Clearing-cleared-alpha-Trade-03.json",
+    "assertions" : {
+      "inputPathCount" : 329,
+      "outputPathCount" : 367,
+      "modelValidationFailures" : 11,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "clearing-cleared-beta-trade-04",
+    "name" : "Clearing cleared beta Trade 04",
+    "inputPath" : "ingest/input/events/Clearing-cleared-beta-Trade-04.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Clearing-cleared-beta-Trade-04.json",
+    "assertions" : {
+      "inputPathCount" : 291,
+      "outputPathCount" : 330,
+      "modelValidationFailures" : 11,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "clearing-new-alpha-trade-02",
+    "name" : "Clearing new alpha Trade 02",
+    "inputPath" : "ingest/input/events/Clearing-new-alpha-Trade-02.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Clearing-new-alpha-Trade-02.json",
+    "assertions" : {
+      "inputPathCount" : 309,
+      "outputPathCount" : 364,
+      "modelValidationFailures" : 11,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "msg-ex69-execution-advice-commodity-swap-classification-new-trade-esma-emir-refit",
+    "name" : "msg ex69 execution advice commodity swap classification new trade esma emir refit",
+    "inputPath" : "ingest/input/events/msg-ex69-execution-advice-commodity-swap-classification-new-trade-esma-emir-refit.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/msg-ex69-execution-advice-commodity-swap-classification-new-trade-esma-emir-refit.json",
+    "assertions" : {
+      "inputPathCount" : 170,
+      "outputPathCount" : 166,
+      "modelValidationFailures" : 17,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "msg-ex70-execution-advice-commodity-swap-classification-termination-esma-emir-refit",
+    "name" : "msg ex70 execution advice commodity swap classification termination esma emir refit",
+    "inputPath" : "ingest/input/events/msg-ex70-execution-advice-commodity-swap-classification-termination-esma-emir-refit.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/msg-ex70-execution-advice-commodity-swap-classification-termination-esma-emir-refit.json",
+    "assertions" : {
+      "inputPathCount" : 180,
+      "outputPathCount" : 166,
+      "modelValidationFailures" : 16,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "new-trade-01",
+    "name" : "New Trade 01",
+    "inputPath" : "ingest/input/events/New-Trade-01.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/New-Trade-01.json",
+    "assertions" : {
+      "inputPathCount" : 339,
+      "outputPathCount" : 367,
+      "modelValidationFailures" : 11,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "new-trade-portfolio-rebalancing-record-ex212-new-trade-esma-emir-refit-commodity-swap",
+    "name" : "New Trade Portfolio Rebalancing record ex212 new trade esma emir refit commodity swap",
+    "inputPath" : "ingest/input/events/New-Trade-Portfolio-Rebalancing-record-ex212-new-trade-esma-emir-refit-commodity-swap.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/New-Trade-Portfolio-Rebalancing-record-ex212-new-trade-esma-emir-refit-commodity-swap.json",
+    "assertions" : {
+      "inputPathCount" : 169,
+      "outputPathCount" : 166,
+      "modelValidationFailures" : 17,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "partial-novation-new-trade",
+    "name" : "partial novation new trade",
+    "inputPath" : "ingest/input/events/partial-novation-new-trade.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/partial-novation-new-trade.json",
+    "assertions" : {
+      "inputPathCount" : 230,
+      "outputPathCount" : 246,
+      "modelValidationFailures" : 7,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "partial-novation-old-trade",
+    "name" : "partial novation old trade",
+    "inputPath" : "ingest/input/events/partial-novation-old-trade.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/partial-novation-old-trade.json",
+    "assertions" : {
+      "inputPathCount" : 230,
+      "outputPathCount" : 246,
+      "modelValidationFailures" : 7,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "record-ex147-new-alpha-trade-cftc-sec-and-canada",
+    "name" : "record ex147 new alpha trade CFTC SEC and canada",
+    "inputPath" : "ingest/input/events/record-ex147-new-alpha-trade-CFTC-SEC-and-canada.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/record-ex147-new-alpha-trade-CFTC-SEC-and-canada.json",
+    "assertions" : {
+      "inputPathCount" : 309,
+      "outputPathCount" : 364,
+      "modelValidationFailures" : 11,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-allocation",
+    "name" : "Trade Allocation",
+    "inputPath" : "ingest/input/events/Trade-Allocation.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Allocation.json",
+    "assertions" : {
+      "inputPathCount" : 204,
+      "outputPathCount" : 229,
+      "modelValidationFailures" : 6,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-correction-ex01",
+    "name" : "Trade Correction ex01",
+    "inputPath" : "ingest/input/events/Trade-Correction-ex01.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Correction-ex01.json",
+    "assertions" : {
+      "inputPathCount" : 198,
+      "outputPathCount" : 215,
+      "modelValidationFailures" : 12,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-correction-ex02",
+    "name" : "Trade Correction ex02",
+    "inputPath" : "ingest/input/events/Trade-Correction-ex02.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Correction-ex02.json",
+    "assertions" : {
+      "inputPathCount" : 210,
+      "outputPathCount" : 235,
+      "modelValidationFailures" : 6,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-amendment",
+    "name" : "Trade Modify Amendment",
+    "inputPath" : "ingest/input/events/Trade-Modify-Amendment.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Amendment.json",
+    "assertions" : {
+      "inputPathCount" : 208,
+      "outputPathCount" : 233,
+      "modelValidationFailures" : 5,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-partial-termination-ex-01",
+    "name" : "Trade Modify Partial Termination ex 01",
+    "inputPath" : "ingest/input/events/Trade-Modify-Partial-Termination-ex-01.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Partial-Termination-ex-01.json",
+    "assertions" : {
+      "inputPathCount" : 212,
+      "outputPathCount" : 237,
+      "modelValidationFailures" : 5,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-partial-termination-ex-02",
+    "name" : "Trade Modify Partial Termination ex 02",
+    "inputPath" : "ingest/input/events/Trade-Modify-Partial-Termination-ex-02.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Partial-Termination-ex-02.json",
+    "assertions" : {
+      "inputPathCount" : 190,
+      "outputPathCount" : 140,
+      "modelValidationFailures" : 13,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-partial-termination-ex-03",
+    "name" : "Trade Modify Partial Termination ex 03",
+    "inputPath" : "ingest/input/events/Trade-Modify-Partial-Termination-ex-03.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Partial-Termination-ex-03.json",
+    "assertions" : {
+      "inputPathCount" : 235,
+      "outputPathCount" : 254,
+      "modelValidationFailures" : 5,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "withdrawal-error-ex01",
+    "name" : "Withdrawal Error ex01",
+    "inputPath" : "ingest/input/events/Withdrawal-Error-ex01.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Withdrawal-Error-ex01.json",
+    "assertions" : {
+      "inputPathCount" : 40,
+      "outputPathCount" : 40,
+      "modelValidationFailures" : 10,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "withdrawal-error-ex02",
+    "name" : "Withdrawal Error ex02",
+    "inputPath" : "ingest/input/events/Withdrawal-Error-ex02.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Withdrawal-Error-ex02.json",
+    "assertions" : {
+      "inputPathCount" : 71,
+      "outputPathCount" : 53,
+      "modelValidationFailures" : 48,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "withdrawal-termination",
+    "name" : "Withdrawal Termination",
+    "inputPath" : "ingest/input/events/Withdrawal-Termination.xml",
+    "outputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Withdrawal-Termination.json",
+    "assertions" : {
+      "inputPathCount" : 65,
+      "outputPathCount" : 49,
+      "modelValidationFailures" : 45,
+      "runtimeError" : false
+    }
+  } ]
+}

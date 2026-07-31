@@ -47,3 +47,8 @@ target/
 
 # python virtual env files
 venv/
+
+# DRR test pack samples, unpacked from com.regnosys.drr:rosetta-source by the
+# update-expectations profile. At test runtime they resolve from the DRR jar.
+rosetta-source/src/main/resources/ingest/input/
+rosetta-source/src/main/resources/regulatory-reporting/input/
