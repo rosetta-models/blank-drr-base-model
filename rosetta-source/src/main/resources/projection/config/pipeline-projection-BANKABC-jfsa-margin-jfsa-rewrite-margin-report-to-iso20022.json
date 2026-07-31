@@ -1,0 +1,16 @@
+{
+  "id" : "pipeline-projection-BANKABC-jfsa-margin-jfsa-rewrite-margin-report-to-iso20022",
+  "name" : "BANKABC Jfsa Rewrite Margin Report To Iso20022",
+  "transform" : {
+    "type" : "PROJECTION",
+    "function" : "drr.projection.iso20022.jfsa.rewrite.margin.functions.Project_JFSARewriteMarginReportToIso20022",
+    "inputType" : "drr.regulation.jfsa.rewrite.margin.JFSAMarginReport",
+    "outputType" : "iso20022.auth108.jfsa.Document"
+  },
+  "upstreamPipelineId" : "pipeline-report-BANKABC-jfsa-margin",
+  "outputSerialisation" : {
+    "format" : "XML",
+    "configPath" : "xml-config/auth108-jfsa-rosetta-xml-config.json"
+  },
+  "modelId" : "BANKABC"
+}

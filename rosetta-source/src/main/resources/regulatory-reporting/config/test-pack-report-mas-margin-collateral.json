@@ -1,0 +1,24 @@
+{
+  "id" : "test-pack-report-mas-margin-collateral",
+  "pipelineId" : "pipeline-report-BANKABC-mas-margin",
+  "name" : "Collateral",
+  "samples" : [ {
+    "id" : "collateral-ex01",
+    "name" : "Collateral ex01",
+    "inputPath" : "regulatory-reporting/input/collateral/Collateral-ex01.json",
+    "outputPath" : "regulatory-reporting/output/mas-margin/collateral/Collateral-ex01.json",
+    "assertions" : {
+      "modelValidationFailures" : 6,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "collateral-ex02",
+    "name" : "collateral ex02",
+    "inputPath" : "regulatory-reporting/input/collateral/collateral-ex02.json",
+    "outputPath" : "regulatory-reporting/output/mas-margin/collateral/collateral-ex02.json",
+    "assertions" : {
+      "modelValidationFailures" : 6,
+      "runtimeError" : false
+    }
+  } ]
+}
