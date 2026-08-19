@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!-- False positive: CVE-2020-27225 is missing authentication on the Eclipse
+    Platform Help Subsystem's local livehelp web server (org.eclipse.help.*), not the
+    core.*/equinox.* OSGi runtime bundles pulled in here transitively via the rune/xtext
+    code-generation tooling. dependency-check's CPE matching for cpe:2.3:a:eclipse:platform:*
+    is overly broad and flags any org.eclipse.platform artifact regardless of which bundle
+    actually contains the vulnerable code - see
+    https://github.com/dependency-check/DependencyCheck/issues/7663 and
+    https://github.com/jeremylong/DependencyCheck/issues/5882 for the same false positive
+    reported against other org.eclipse.platform bundles. -->
+    <suppress>
+        <notes><![CDATA[
+        False positive - see comment above.
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.platform/.*$</packageUrl>
+        <cve>CVE-2020-27225</cve>
+    </suppress>
+    <!-- False positive: CVE-2019-10249 affects Eclipse Xtext before 2.18.0. This project
+    builds against Xtext 2.38.0; the flagged artifact is org.eclipse.emf.codegen.ecore.xtext,
+    whose own artifact version (1.8.0) is unrelated to the Xtext release train.
+    dependency-check maps that 1.8.0 onto cpe:2.3:a:eclipse:xtext:1.8.0 and so reads it as a
+    pre-2.18.0 Xtext. -->
+    <suppress>
+        <notes><![CDATA[
+        False positive - artifact version is not the Xtext version. See comment above.
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.emf/org\.eclipse\.emf\.codegen\.ecore\.xtext@.*$</packageUrl>
+        <cve>CVE-2019-10249</cve>
+    </suppress>
+    <!--
+    Suppression file for the CVE scan (org.owasp:dependency-check-maven), passed
+    via -DsuppressionFiles in .github/workflows/cve-scanning.yml.
+
+    To suppress a finding, add an entry like:
+
+    <suppress>
+        <notes><![CDATA[
+        Reason for suppression goes here
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/group\.id/artifact\-id@.*$</packageUrl>
+        <cve>CVE-YYYY-NNNN</cve>
+    </suppress>
+
+    Or suppress by CWE:
+
+    <suppress>
+        <notes><![CDATA[
+        Reason for suppression goes here
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/group\.id/artifact\-id@.*$</packageUrl>
+        <cwe>79</cwe>
+    </suppress>
+
+    For more information on the suppression file format, see:
+    https://dependency-check.github.io/DependencyCheck/general/suppression.html
+    -->
+</suppressions>
