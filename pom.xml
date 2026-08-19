@@ -28,6 +28,8 @@
         <java-diff-utils.version>4.12</java-diff-utils.version>
 
         <guava.version>33.3.1-jre</guava.version>
+        <!-- Pinned past the versions flagged by the dependency-check CVE scan -->
+        <plexus-utils.version>3.6.1</plexus-utils.version>
         <junit.version>5.9.1</junit.version>
         <junit-platform-commons.version>1.9.1</junit-platform-commons.version>
         <mockito.version>5.1.1</mockito.version>
@@ -116,6 +118,14 @@
                 </exclusions>
             </dependency>
             <!-- rosetta END -->
+            <!-- Force patched versions of transitive dependencies pulled in via
+                 the rune/xtext code-generation tooling, to clear CVEs flagged by
+                 the dependency-check CVE scan. -->
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-utils</artifactId>
+                <version>${plexus-utils.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
