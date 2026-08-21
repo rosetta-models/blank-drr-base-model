@@ -16,8 +16,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <drr.version>7.7.0</drr.version>
-        <rosetta.dsl.version>9.89.0</rosetta.dsl.version>
-        <rosetta.bundle.version>11.129.0</rosetta.bundle.version>
+        <rosetta.dsl.version>9.92.1</rosetta.dsl.version>
+        <rosetta.bundle.version>11.132.0</rosetta.bundle.version>
 
         <xtext.version>2.38.0</xtext.version>
         <guice.version>6.0.0</guice.version>
