@@ -177,7 +177,7 @@
     <repositories>
         <repository>
             <id>isda-maven</id>
-            <url>https://europe-west1-maven.pkg.dev/production-208613/isda-maven</url>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/isda-maven</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -187,7 +187,7 @@
         </repository>
         <repository>
             <id>public-maven</id>
-            <url>https://europe-west1-maven.pkg.dev/production-208613/public-maven</url>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/public-maven</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -268,11 +268,11 @@
     <distributionManagement>
         <repository>
             <id>artifact-registry-BANKABC</id>
-            <url>https://europe-west1-maven.pkg.dev/production-208613/BANKABC-maven</url>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/BANKABC-maven</url>
         </repository>
         <snapshotRepository>
             <id>artifact-registry-BANKABC-snapshot</id>
-            <url>https://europe-west1-maven.pkg.dev/production-208613/BANKABC-maven-snapshot</url>
+            <url>artifactregistry://europe-west1-maven.pkg.dev/production-208613/BANKABC-maven-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
