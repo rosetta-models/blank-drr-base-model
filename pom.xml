@@ -30,6 +30,7 @@
         <guava.version>33.3.1-jre</guava.version>
         <!-- Pinned past the versions flagged by the dependency-check CVE scan -->
         <plexus-utils.version>3.6.1</plexus-utils.version>
+        <jsoup.version>1.23.2</jsoup.version>
         <junit.version>5.9.1</junit.version>
         <junit-platform-commons.version>1.9.1</junit-platform-commons.version>
         <mockito.version>5.1.1</mockito.version>
@@ -136,6 +137,11 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk8</artifactId>
                 <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
             </dependency>
             <!-- test -->
             <dependency>
