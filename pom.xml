@@ -22,10 +22,10 @@
         <xtext.version>2.38.0</xtext.version>
         <guice.version>6.0.0</guice.version>
 
-        <commons-csv.version>1.10.0</commons-csv.version>
+        <commons-csv.version>1.14.1</commons-csv.version>
         <commons-io.version>2.18.0</commons-io.version>
 
-        <java-diff-utils.version>4.12</java-diff-utils.version>
+        <java-diff-utils.version>4.17</java-diff-utils.version>
 
         <guava.version>33.3.1-jre</guava.version>
         <!-- Pinned past the versions flagged by the dependency-check CVE scan -->
@@ -37,21 +37,21 @@
         <jsoup.version>1.23.2</jsoup.version>
         <junit.version>5.9.1</junit.version>
         <junit-platform-commons.version>1.9.1</junit-platform-commons.version>
-        <mockito.version>5.1.1</mockito.version>
+        <mockito.version>5.23.0</mockito.version>
         <hamcrest.version>2.2</hamcrest.version>
 
         <maven.compiler.release>11</maven.compiler.release>
         <java.enforced.version>[21,22)</java.enforced.version>
 
         <!-- Plugins -->
-        <maven-enforcer-plugin.version>3.2.1</maven-enforcer-plugin.version>
-        <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
-        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.7.0</maven-dependency-plugin.version>
-        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
+        <build-helper-maven-plugin.version>3.6.2</build-helper-maven-plugin.version>
+        <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>3.11.0</maven-dependency-plugin.version>
+        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
+        <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
         <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
         <maven-core.version>3.2.5</maven-core.version>
         <!-- Rosetta -->
