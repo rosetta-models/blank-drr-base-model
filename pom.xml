@@ -35,7 +35,7 @@
              rune-common jackson.version constraint has been re-checked. -->
         <jackson-core.version>2.18.11</jackson-core.version>
         <jsoup.version>1.23.2</jsoup.version>
-        <junit.version>5.9.1</junit.version>
+        <junit.version>6.1.3</junit.version>
         <junit-platform-commons.version>1.9.1</junit-platform-commons.version>
         <mockito.version>5.1.1</mockito.version>
         <hamcrest.version>2.2</hamcrest.version>
