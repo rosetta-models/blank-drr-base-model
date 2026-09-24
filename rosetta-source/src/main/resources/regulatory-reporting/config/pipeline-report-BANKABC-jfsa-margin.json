@@ -1,0 +1,11 @@
+{
+  "id" : "pipeline-report-BANKABC-jfsa-margin",
+  "name" : "BANKABC JFSA / Margin",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.jfsa.rewrite.margin.reports.JFSAMarginReportFunction",
+    "inputType" : "drr.regulation.common.CollateralReportInstruction",
+    "outputType" : "drr.regulation.jfsa.rewrite.margin.JFSAMarginReport"
+  },
+  "modelId" : "BANKABC"
+}

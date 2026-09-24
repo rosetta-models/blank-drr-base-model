@@ -1,0 +1,11 @@
+{
+  "id" : "pipeline-report-BANKABC-esma-emir-margin",
+  "name" : "BANKABC ESMA / EMIR Margin",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.esma.emir.refit.margin.reports.ESMAEMIRMarginReportFunction",
+    "inputType" : "drr.regulation.common.CollateralReportInstruction",
+    "outputType" : "drr.regulation.esma.emir.refit.margin.ESMAEMIRMarginReport"
+  },
+  "modelId" : "BANKABC"
+}

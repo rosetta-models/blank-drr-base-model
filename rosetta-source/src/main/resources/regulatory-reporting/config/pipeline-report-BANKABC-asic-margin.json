@@ -1,0 +1,11 @@
+{
+  "id" : "pipeline-report-BANKABC-asic-margin",
+  "name" : "BANKABC ASIC / Margin",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.asic.rewrite.margin.reports.ASICMarginReportFunction",
+    "inputType" : "drr.regulation.common.CollateralReportInstruction",
+    "outputType" : "drr.regulation.asic.rewrite.margin.ASICMarginReport"
+  },
+  "modelId" : "BANKABC"
+}

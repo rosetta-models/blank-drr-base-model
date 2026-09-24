@@ -6,7 +6,6 @@ import com.regnosys.rosetta.common.transform.TestPackModel;
 import com.regnosys.testing.transform.TransformTestExtension;
 import drr.projection.iso20022.fca.ukemir.refit.trade.functions.Project_FcaUkEmirTradeReportToIso20022;
 import iso20022.Auth030FcaModelConfig;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -16,12 +15,11 @@ import java.util.stream.Stream;
 
 import static com.regnosys.rosetta.common.transform.TestPackUtils.PROJECTION_CONFIG_PATH_WITHOUT_ISO20022;
 
-@Disabled("Enable when the test data is available")
 public class FcaUkEmirTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_FcaUkEmirTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "bankabc",
+                    "BANKABC",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_FcaUkEmirTradeReportToIso20022.class)

@@ -1,0 +1,16 @@
+{
+  "id" : "pipeline-projection-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-jfsa-trade-jfsa-rewrite-trade-report-to-iso20022",
+  "name" : "BANKABC Jfsa Rewrite Trade Report To Iso20022",
+  "transform" : {
+    "type" : "PROJECTION",
+    "function" : "drr.projection.iso20022.jfsa.rewrite.trade.functions.Project_JFSARewriteTradeReportToIso20022",
+    "inputType" : "drr.regulation.jfsa.rewrite.trade.JFSATransactionReport",
+    "outputType" : "iso20022.auth030.jfsa.Document"
+  },
+  "upstreamPipelineId" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-jfsa-trade",
+  "outputSerialisation" : {
+    "format" : "XML",
+    "configPath" : "xml-config/auth030-jfsa-rosetta-xml-config.json"
+  },
+  "modelId" : "BANKABC"
+}

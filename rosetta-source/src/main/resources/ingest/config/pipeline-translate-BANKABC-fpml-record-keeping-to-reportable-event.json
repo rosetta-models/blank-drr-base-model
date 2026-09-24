@@ -1,0 +1,15 @@
+{
+  "id" : "pipeline-translate-BANKABC-fpml-record-keeping-to-reportable-event",
+  "name" : "BANKABC Fpml Record Keeping To Reportable Event",
+  "transform" : {
+    "type" : "TRANSLATE",
+    "function" : "drr.ingest.fpml.recordkeeping.message.functions.Ingest_FpmlRecordKeepingToReportableEvent",
+    "inputType" : "fpml.consolidated.doc.Document",
+    "outputType" : "drr.regulation.common.ReportableEvent"
+  },
+  "inputSerialisation" : {
+    "format" : "XML",
+    "configPath" : "xml-config/fpml-5-13-recordkeeping-xml-config.json"
+  },
+  "modelId" : "BANKABC"
+}

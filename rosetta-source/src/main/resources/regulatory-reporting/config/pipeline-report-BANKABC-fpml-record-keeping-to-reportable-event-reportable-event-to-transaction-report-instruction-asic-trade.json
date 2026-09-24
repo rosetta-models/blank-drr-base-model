@@ -1,0 +1,12 @@
+{
+  "id" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-asic-trade",
+  "name" : "BANKABC ASIC / Trade",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.asic.rewrite.trade.reports.ASICTradeReportFunction",
+    "inputType" : "drr.regulation.common.TransactionReportInstruction",
+    "outputType" : "drr.regulation.asic.rewrite.trade.ASICTransactionReport"
+  },
+  "upstreamPipelineId" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "modelId" : "BANKABC"
+}
