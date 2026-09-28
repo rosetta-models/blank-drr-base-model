@@ -29,7 +29,7 @@
 
         <guava.version>33.3.1-jre</guava.version>
         <!-- Pinned past the versions flagged by the dependency-check CVE scan -->
-        <plexus-utils.version>3.6.1</plexus-utils.version>
+        <plexus-utils.version>3.6.2</plexus-utils.version>
         <!-- jackson-core is pulled in transitively via rosetta-common; pin to 2.18.11
              to clear CVE-2026-89407. Stay within the 2.18.x line unless the
              rune-common jackson.version constraint has been re-checked. -->
