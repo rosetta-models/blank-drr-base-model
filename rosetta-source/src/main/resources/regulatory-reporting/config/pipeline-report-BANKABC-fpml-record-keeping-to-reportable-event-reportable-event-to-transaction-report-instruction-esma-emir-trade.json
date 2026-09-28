@@ -1,0 +1,12 @@
+{
+  "id" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-esma-emir-trade",
+  "name" : "BANKABC ESMA / EMIR Trade",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.esma.emir.refit.trade.reports.ESMAEMIRTradeReportFunction",
+    "inputType" : "drr.regulation.common.TransactionReportInstruction",
+    "outputType" : "drr.regulation.esma.emir.refit.trade.ESMAEMIRTransactionReport"
+  },
+  "upstreamPipelineId" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "modelId" : "BANKABC"
+}

@@ -4,7 +4,6 @@ import com.regnosys.BANKABC.report.ReportTestRuntimeModule;
 import com.regnosys.rosetta.common.transform.TestPackModel;
 import com.regnosys.testing.transform.TransformTestExtension;
 import drr.regulation.asic.rewrite.valuation.reports.ASICValuationReportFunction;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -14,13 +13,12 @@ import java.util.stream.Stream;
 
 import static com.regnosys.rosetta.common.transform.TestPackUtils.REPORT_CONFIG_PATH;
 
-@Disabled("Enable when the test data is available")
 public class ASICValuationReportTest {
 
     @RegisterExtension
     static TransformTestExtension<ASICValuationReportFunction> testExtension =
             new TransformTestExtension<>(
-                    "bankabc",
+                    "BANKABC",
                     new ReportTestRuntimeModule(),
                     REPORT_CONFIG_PATH,
                     ASICValuationReportFunction.class);
