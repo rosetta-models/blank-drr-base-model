@@ -1,0 +1,12 @@
+{
+  "id" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-fca-ukemir-trade",
+  "name" : "BANKABC FCA / UKEMIR Trade",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.fca.ukemir.refit.trade.reports.FCAUKEMIRTradeReportFunction",
+    "inputType" : "drr.regulation.common.TransactionReportInstruction",
+    "outputType" : "drr.regulation.fca.ukemir.refit.trade.FCAUKEMIRTransactionReport"
+  },
+  "upstreamPipelineId" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "modelId" : "BANKABC"
+}

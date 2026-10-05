@@ -1,0 +1,186 @@
+{
+  "id" : "test-pack-enrich-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-events",
+  "pipelineId" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "name" : "Events",
+  "samples" : [ {
+    "id" : "clearing-cleared-alpha-trade-03",
+    "name" : "Clearing cleared alpha Trade 03",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Clearing-cleared-alpha-Trade-03.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Clearing-cleared-alpha-Trade-03.json",
+    "assertions" : {
+      "modelValidationFailures" : 15,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "clearing-cleared-beta-trade-04",
+    "name" : "Clearing cleared beta Trade 04",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Clearing-cleared-beta-Trade-04.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Clearing-cleared-beta-Trade-04.json",
+    "assertions" : {
+      "modelValidationFailures" : 15,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "clearing-new-alpha-trade-02",
+    "name" : "Clearing new alpha Trade 02",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Clearing-new-alpha-Trade-02.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Clearing-new-alpha-Trade-02.json",
+    "assertions" : {
+      "modelValidationFailures" : 15,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "msg-ex69-execution-advice-commodity-swap-classification-new-trade-esma-emir-refit",
+    "name" : "msg ex69 execution advice commodity swap classification new trade esma emir refit",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/msg-ex69-execution-advice-commodity-swap-classification-new-trade-esma-emir-refit.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/msg-ex69-execution-advice-commodity-swap-classification-new-trade-esma-emir-refit.json",
+    "assertions" : {
+      "modelValidationFailures" : 28,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "msg-ex70-execution-advice-commodity-swap-classification-termination-esma-emir-refit",
+    "name" : "msg ex70 execution advice commodity swap classification termination esma emir refit",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/msg-ex70-execution-advice-commodity-swap-classification-termination-esma-emir-refit.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/msg-ex70-execution-advice-commodity-swap-classification-termination-esma-emir-refit.json",
+    "assertions" : {
+      "modelValidationFailures" : 27,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "new-trade-01",
+    "name" : "New Trade 01",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/New-Trade-01.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/New-Trade-01.json",
+    "assertions" : {
+      "modelValidationFailures" : 15,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "new-trade-portfolio-rebalancing-record-ex212-new-trade-esma-emir-refit-commodity-swap",
+    "name" : "New Trade Portfolio Rebalancing record ex212 new trade esma emir refit commodity swap",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/New-Trade-Portfolio-Rebalancing-record-ex212-new-trade-esma-emir-refit-commodity-swap.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/New-Trade-Portfolio-Rebalancing-record-ex212-new-trade-esma-emir-refit-commodity-swap.json",
+    "assertions" : {
+      "modelValidationFailures" : 28,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "partial-novation-new-trade",
+    "name" : "partial novation new trade",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/partial-novation-new-trade.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/partial-novation-new-trade.json",
+    "assertions" : {
+      "modelValidationFailures" : 9,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "partial-novation-old-trade",
+    "name" : "partial novation old trade",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/partial-novation-old-trade.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/partial-novation-old-trade.json",
+    "assertions" : {
+      "modelValidationFailures" : 8,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "record-ex147-new-alpha-trade-cftc-sec-and-canada",
+    "name" : "record ex147 new alpha trade CFTC SEC and canada",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/record-ex147-new-alpha-trade-CFTC-SEC-and-canada.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/record-ex147-new-alpha-trade-CFTC-SEC-and-canada.json",
+    "assertions" : {
+      "modelValidationFailures" : 15,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-allocation",
+    "name" : "Trade Allocation",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Allocation.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Allocation.json",
+    "assertions" : {
+      "modelValidationFailures" : 5,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-correction-ex01",
+    "name" : "Trade Correction ex01",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Correction-ex01.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Correction-ex01.json",
+    "assertions" : {
+      "modelValidationFailures" : 17,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-correction-ex02",
+    "name" : "Trade Correction ex02",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Correction-ex02.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Correction-ex02.json",
+    "assertions" : {
+      "modelValidationFailures" : 5,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-amendment",
+    "name" : "Trade Modify Amendment",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Amendment.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Modify-Amendment.json",
+    "assertions" : {
+      "modelValidationFailures" : 4,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-partial-termination-ex-01",
+    "name" : "Trade Modify Partial Termination ex 01",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Partial-Termination-ex-01.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Modify-Partial-Termination-ex-01.json",
+    "assertions" : {
+      "modelValidationFailures" : 4,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-partial-termination-ex-02",
+    "name" : "Trade Modify Partial Termination ex 02",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Partial-Termination-ex-02.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Modify-Partial-Termination-ex-02.json",
+    "assertions" : {
+      "modelValidationFailures" : 21,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "trade-modify-partial-termination-ex-03",
+    "name" : "Trade Modify Partial Termination ex 03",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Trade-Modify-Partial-Termination-ex-03.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Trade-Modify-Partial-Termination-ex-03.json",
+    "assertions" : {
+      "modelValidationFailures" : 4,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "withdrawal-error-ex01",
+    "name" : "Withdrawal Error ex01",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Withdrawal-Error-ex01.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Withdrawal-Error-ex01.json",
+    "assertions" : {
+      "modelValidationFailures" : 14,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "withdrawal-error-ex02",
+    "name" : "Withdrawal Error ex02",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Withdrawal-Error-ex02.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Withdrawal-Error-ex02.json",
+    "assertions" : {
+      "modelValidationFailures" : 76,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "withdrawal-termination",
+    "name" : "Withdrawal Termination",
+    "inputPath" : "ingest/output/fpml-record-keeping-to-reportable-event/events/Withdrawal-Termination.json",
+    "outputPath" : "enrich/output/fpml-record-keeping-to-reportable-event/reportable-event-to-transaction-report-instruction/events/Withdrawal-Termination.json",
+    "assertions" : {
+      "modelValidationFailures" : 70,
+      "runtimeError" : false
+    }
+  } ]
+}
