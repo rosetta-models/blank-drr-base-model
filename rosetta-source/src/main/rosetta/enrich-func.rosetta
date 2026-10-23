@@ -2,26 +2,20 @@ namespace BANKABC.enrich
 version "${project.version}"
 
 import drr.base.trade.*
+import drr.enrichment.common.test.*
 import drr.regulation.common.*
 
-func Enrich_ReportableEventToTransactionReportInstruction:
+func Enrich_ReportableEventToTransactionReportInstruction: <"Enriches an ingested ReportableEvent into the TransactionReportInstruction used as the input sample of a report. Delegates to the DRR test pack enrichment, which defaults the reportingSide attributes from the originating workflow step. Replace the body when the reporting side should come from your own reference data. This function is intended to be used for testing purposes only, NOT for production.">
     [enrich]
     inputs:
-        reportableEvent ReportableEvent (1..1)
+        reportableEvent ReportableEvent (1..1) <"ReportableEvent containing a proposed BusinessEvent (i.e. the output sample from an Ingestion).">
     output:
-        transactionReportInstruction TransactionReportInstruction (1..1)
+        transactionReportInstruction TransactionReportInstruction (1..1) <"TransactionReportInstruction containing a BusinessEvent and a ReportingSide (i.e. the input sample for a Report).">
 
-func Enrich_ReportableValuationToValuationReportInstruction:
-    [enrich]
-    inputs:
-        reportableValuation ReportableValuation (1..1)
-    output:
-        enrichedValuationReportInstruction ValuationReportInstruction (1..1)
+    set transactionReportInstruction:
+        Enrich_TransactionReportInstructionTestPackDefault(reportableEvent)
 
-func Enrich_CollateralReportInstructionWithReportableCollateralAndReportingSide:
-//[enrich]
-    inputs:
-        reportableCollateral ReportableCollateral (1..1)
-        reportingSide ReportingSide (1..1)
-    output:
-        enrichedCollateralReportInstruction CollateralReportInstruction (1..1)
+// Valuation and collateral reports need no enrich step: the DRR samples under
+// regulatory-reporting/input are already ValuationReportInstruction / CollateralReportInstruction,
+// so those pipelines start at REPORT. Add an [enrich] function here only once it has a body - a
+// body-less enrich transform produces an empty output and every downstream sample is empty with it.

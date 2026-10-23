@@ -1,0 +1,12 @@
+{
+  "id" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "name" : "BANKABC Reportable Event To Transaction Report Instruction",
+  "transform" : {
+    "type" : "ENRICH",
+    "function" : "BANKABC.enrich.functions.Enrich_ReportableEventToTransactionReportInstruction",
+    "inputType" : "drr.regulation.common.ReportableEvent",
+    "outputType" : "drr.regulation.common.TransactionReportInstruction"
+  },
+  "upstreamPipelineId" : "pipeline-translate-BANKABC-fpml-record-keeping-to-reportable-event",
+  "modelId" : "BANKABC"
+}

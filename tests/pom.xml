@@ -68,6 +68,37 @@
             <id>update-expectations</id>
             <build>
                 <plugins>
+                    <!-- The test pack writer discovers test packs from the sample files on disk under
+                         TEST_WRITE_BASE_PATH, so the DRR samples that drive the pipelines are unpacked
+                         from the DRR model before the test pack creator runs. They are not checked in:
+                         at test runtime they resolve from the DRR jar on the classpath. -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>${maven-dependency-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>unpack-drr-test-pack-samples</id>
+                                <phase>process-test-resources</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${maven.multiModuleProjectDirectory}/rosetta-source/src/main/resources</outputDirectory>
+                                    <overWriteReleases>true</overWriteReleases>
+                                    <overWriteSnapshots>true</overWriteSnapshots>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>com.regnosys.drr</groupId>
+                                            <artifactId>rosetta-source</artifactId>
+                                            <version>${drr.version}</version>
+                                            <includes>ingest/input/**,regulatory-reporting/input/**</includes>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
