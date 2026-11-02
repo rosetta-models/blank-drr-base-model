@@ -27,7 +27,7 @@
 
         <java-diff-utils.version>4.17</java-diff-utils.version>
 
-        <guava.version>33.3.1-jre</guava.version>
+        <guava.version>33.7.2-jre</guava.version>
         <!-- Pinned past the versions flagged by the dependency-check CVE scan -->
         <plexus-utils.version>3.6.2</plexus-utils.version>
         <!-- Jackson is pulled in transitively via rosetta-common; pin it through the BOM to
