@@ -1,0 +1,315 @@
+{
+  "originatingWorkflowStep" : {
+    "action" : "New",
+    "businessEvent" : {
+      "after" : [ {
+        "meta" : {
+          "globalKey" : "6046822a"
+        },
+        "state" : {
+          "positionState" : "Formed"
+        },
+        "trade" : {
+          "meta" : {
+            "globalKey" : "71fc5b87"
+          },
+          "party" : [ {
+            "meta" : {
+              "externalKey" : "party1",
+              "globalKey" : "271f023c"
+            },
+            "name" : {
+              "value" : "Bank X (reportingParty)"
+            },
+            "partyId" : [ {
+              "identifier" : {
+                "meta" : {
+                  "scheme" : "http://www.fpml.org/coding-scheme/external/iso17442"
+                },
+                "value" : "549300K7EEOSKRJDRI19"
+              },
+              "identifierType" : "LEI",
+              "meta" : {
+                "globalKey" : "ddab3047"
+              }
+            } ]
+          }, {
+            "meta" : {
+              "externalKey" : "party2",
+              "globalKey" : "67e3087d"
+            },
+            "name" : {
+              "value" : "Bank Y"
+            },
+            "partyId" : [ {
+              "identifier" : {
+                "meta" : {
+                  "scheme" : "http://www.fpml.org/coding-scheme/external/iso17442"
+                },
+                "value" : "549300O5MFEP1XJ40B46"
+              },
+              "identifierType" : "LEI",
+              "meta" : {
+                "globalKey" : "927fcae8"
+              }
+            } ]
+          } ],
+          "tradeIdentifier" : [ {
+            "assignedIdentifier" : [ {
+              "identifier" : {
+                "meta" : {
+                  "scheme" : "http://www.fpml.org/coding-scheme/external/unique-transaction-identifier"
+                },
+                "value" : "WITHDRAWALERRORE0122"
+              }
+            } ],
+            "identifierType" : "UniqueTransactionIdentifier",
+            "issuer" : {
+              "meta" : {
+                "scheme" : "http://www.fpml.org/coding-scheme/external/issuer-identifier"
+              },
+              "value" : "549300K7EEOSKRJDRI19"
+            },
+            "meta" : {
+              "globalKey" : "f2240e4e"
+            }
+          } ]
+        }
+      } ],
+      "instruction" : [ {
+        "before" : {
+          "value" : {
+            "meta" : {
+              "globalKey" : "71fc5b87"
+            },
+            "trade" : {
+              "meta" : {
+                "globalKey" : "71fc5b87"
+              },
+              "party" : [ {
+                "meta" : {
+                  "externalKey" : "party1",
+                  "globalKey" : "271f023c"
+                },
+                "name" : {
+                  "value" : "Bank X (reportingParty)"
+                },
+                "partyId" : [ {
+                  "identifier" : {
+                    "meta" : {
+                      "scheme" : "http://www.fpml.org/coding-scheme/external/iso17442"
+                    },
+                    "value" : "549300K7EEOSKRJDRI19"
+                  },
+                  "identifierType" : "LEI",
+                  "meta" : {
+                    "globalKey" : "ddab3047"
+                  }
+                } ]
+              }, {
+                "meta" : {
+                  "externalKey" : "party2",
+                  "globalKey" : "67e3087d"
+                },
+                "name" : {
+                  "value" : "Bank Y"
+                },
+                "partyId" : [ {
+                  "identifier" : {
+                    "meta" : {
+                      "scheme" : "http://www.fpml.org/coding-scheme/external/iso17442"
+                    },
+                    "value" : "549300O5MFEP1XJ40B46"
+                  },
+                  "identifierType" : "LEI",
+                  "meta" : {
+                    "globalKey" : "927fcae8"
+                  }
+                } ]
+              } ],
+              "tradeIdentifier" : [ {
+                "assignedIdentifier" : [ {
+                  "identifier" : {
+                    "meta" : {
+                      "scheme" : "http://www.fpml.org/coding-scheme/external/unique-transaction-identifier"
+                    },
+                    "value" : "WITHDRAWALERRORE0122"
+                  }
+                } ],
+                "identifierType" : "UniqueTransactionIdentifier",
+                "issuer" : {
+                  "meta" : {
+                    "scheme" : "http://www.fpml.org/coding-scheme/external/issuer-identifier"
+                  },
+                  "value" : "549300K7EEOSKRJDRI19"
+                },
+                "meta" : {
+                  "globalKey" : "f2240e4e"
+                }
+              } ]
+            }
+          }
+        }
+      } ],
+      "meta" : {
+        "globalKey" : "1bf15c83"
+      }
+    },
+    "eventIdentifier" : [ {
+      "assignedIdentifier" : [ {
+        "identifier" : {
+          "value" : "X001"
+        }
+      } ],
+      "meta" : {
+        "globalKey" : "28bad9"
+      }
+    } ],
+    "messageInformation" : {
+      "messageId" : {
+        "meta" : {
+          "scheme" : "http://www.fpml.org/coding-scheme/external/technical-record-id"
+        },
+        "value" : "X001"
+      },
+      "sentBy" : {
+        "value" : "BANKX"
+      },
+      "sentTo" : [ {
+        "value" : "SDR01"
+      } ]
+    },
+    "meta" : {
+      "globalKey" : "1c3bc6e6"
+    },
+    "party" : [ {
+      "meta" : {
+        "externalKey" : "party1",
+        "globalKey" : "271f023c"
+      },
+      "name" : {
+        "value" : "Bank X (reportingParty)"
+      },
+      "partyId" : [ {
+        "identifier" : {
+          "meta" : {
+            "scheme" : "http://www.fpml.org/coding-scheme/external/iso17442"
+          },
+          "value" : "549300K7EEOSKRJDRI19"
+        },
+        "identifierType" : "LEI",
+        "meta" : {
+          "globalKey" : "ddab3047"
+        }
+      } ]
+    }, {
+      "meta" : {
+        "externalKey" : "party2",
+        "globalKey" : "67e3087d"
+      },
+      "name" : {
+        "value" : "Bank Y"
+      },
+      "partyId" : [ {
+        "identifier" : {
+          "meta" : {
+            "scheme" : "http://www.fpml.org/coding-scheme/external/iso17442"
+          },
+          "value" : "549300O5MFEP1XJ40B46"
+        },
+        "identifierType" : "LEI",
+        "meta" : {
+          "globalKey" : "927fcae8"
+        }
+      } ]
+    } ],
+    "previousWorkflowStep" : {
+      "globalReference" : "c2578b03"
+    },
+    "timestamp" : [ {
+      "dateTime" : "2011-02-04T16:42:16Z",
+      "qualification" : "eventCreationDateTime"
+    } ]
+  },
+  "reportableInformation" : {
+    "globalPartyInformation" : [ {
+      "partyReference" : {
+        "externalReference" : "party1",
+        "globalReference" : "271f023c"
+      },
+      "relatedParty" : [ {
+        "partyReference" : {
+          "externalReference" : "party1",
+          "globalReference" : "271f023c"
+        },
+        "role" : "TradeSource"
+      }, {
+        "partyReference" : {
+          "externalReference" : "party2",
+          "globalReference" : "67e3087d"
+        },
+        "role" : "Counterparty"
+      } ]
+    }, {
+      "partyReference" : {
+        "externalReference" : "party2",
+        "globalReference" : "67e3087d"
+      },
+      "relatedParty" : [ {
+        "partyReference" : {
+          "externalReference" : "party1",
+          "globalReference" : "271f023c"
+        },
+        "role" : "TradeSource"
+      }, {
+        "partyReference" : {
+          "externalReference" : "party2",
+          "globalReference" : "67e3087d"
+        },
+        "role" : "Counterparty"
+      } ]
+    } ],
+    "jurisdictionInformation" : [ {
+      "partyInformation" : [ {
+        "partyReference" : {
+          "externalReference" : "party1",
+          "globalReference" : "271f023c"
+        }
+      } ],
+      "supervisoryBody" : {
+        "value" : "ESMA"
+      },
+      "transactionInformation" : {
+        "reportableExecutionVenue" : {
+          "executionVenueType" : "OffFacility"
+        }
+      }
+    }, {
+      "partyInformation" : [ {
+        "partyReference" : {
+          "externalReference" : "party2",
+          "globalReference" : "67e3087d"
+        }
+      } ],
+      "supervisoryBody" : {
+        "value" : "CFTC"
+      },
+      "transactionInformation" : {
+        "reportableExecutionVenue" : {
+          "executionVenueType" : "OffFacility"
+        }
+      }
+    } ],
+    "reportableAction" : "Error"
+  },
+  "reportingSide" : {
+    "reportingCounterparty" : {
+      "externalReference" : "party2",
+      "globalReference" : "67e3087d"
+    },
+    "reportingParty" : {
+      "externalReference" : "party1",
+      "globalReference" : "271f023c"
+    }
+  }
+}

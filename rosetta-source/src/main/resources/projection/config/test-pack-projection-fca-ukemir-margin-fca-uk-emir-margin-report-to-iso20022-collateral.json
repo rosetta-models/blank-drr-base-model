@@ -1,0 +1,26 @@
+{
+  "id" : "test-pack-projection-fca-ukemir-margin-fca-uk-emir-margin-report-to-iso20022-collateral",
+  "pipelineId" : "pipeline-projection-BANKABC-fca-ukemir-margin-fca-uk-emir-margin-report-to-iso20022",
+  "name" : "Collateral",
+  "samples" : [ {
+    "id" : "collateral-ex01",
+    "name" : "Collateral ex01",
+    "inputPath" : "regulatory-reporting/output/fca-ukemir-margin/collateral/Collateral-ex01.json",
+    "outputPath" : "projection/output/fca-ukemir-margin/fca-uk-emir-margin-report-to-iso20022/collateral/Collateral-ex01.xml",
+    "assertions" : {
+      "modelValidationFailures" : 5,
+      "schemaValidationFailure" : false,
+      "runtimeError" : false
+    }
+  }, {
+    "id" : "collateral-ex02",
+    "name" : "collateral ex02",
+    "inputPath" : "regulatory-reporting/output/fca-ukemir-margin/collateral/collateral-ex02.json",
+    "outputPath" : "projection/output/fca-ukemir-margin/fca-uk-emir-margin-report-to-iso20022/collateral/collateral-ex02.xml",
+    "assertions" : {
+      "modelValidationFailures" : 5,
+      "schemaValidationFailure" : false,
+      "runtimeError" : false
+    }
+  } ]
+}

@@ -1,0 +1,12 @@
+{
+  "id" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-jfsa-trade",
+  "name" : "BANKABC JFSA / Trade",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.jfsa.rewrite.trade.reports.JFSATradeReportFunction",
+    "inputType" : "drr.regulation.common.TransactionReportInstruction",
+    "outputType" : "drr.regulation.jfsa.rewrite.trade.JFSATransactionReport"
+  },
+  "upstreamPipelineId" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "modelId" : "BANKABC"
+}
