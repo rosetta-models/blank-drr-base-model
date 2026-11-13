@@ -20,7 +20,7 @@ public class MASTradeIso20022ReportTest {
     @RegisterExtension
     static TransformTestExtension<Project_MASTradeReportToIso20022> testExtension =
             new TransformTestExtension<>(
-                    "bankabc",
+                    "BANKABC",
                     new ReportTestRuntimeModule(),
                     PROJECTION_CONFIG_PATH_WITHOUT_ISO20022,
                     Project_MASTradeReportToIso20022.class)

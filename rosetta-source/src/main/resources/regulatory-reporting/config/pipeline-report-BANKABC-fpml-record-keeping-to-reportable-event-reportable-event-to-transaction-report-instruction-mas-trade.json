@@ -1,0 +1,12 @@
+{
+  "id" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-mas-trade",
+  "name" : "BANKABC MAS / Trade",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.mas.rewrite.trade.reports.MASTradeReportFunction",
+    "inputType" : "drr.regulation.common.TransactionReportInstruction",
+    "outputType" : "drr.regulation.mas.rewrite.trade.MASTransactionReport"
+  },
+  "upstreamPipelineId" : "pipeline-enrich-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction",
+  "modelId" : "BANKABC"
+}
