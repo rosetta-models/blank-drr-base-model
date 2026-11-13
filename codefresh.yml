@@ -33,8 +33,7 @@ steps:
   MvnSettings:
     image: alpine/git
     commands:
-      - cf_export MVN_CLI_OPT="-Dmaven.repo.local=\"${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}_m2/repository\""
-      - echo $MVN_CLI_OPT
+      - cf_export MVN_CLI_OPT="-Dmaven.repo.local=\"${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}_m2/repository\" -s ${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}/settings.xml"
 
   # Exports GCP_ACCESS_TOKEN, which the Artifact Registry servers in settings.xml
   # use as their Basic auth password, by workload identity federation rather than
@@ -45,14 +44,77 @@ steps:
   # everything that spends it is below.
   Authenticate:
     title: Federate into GCP
-    type: regnosysops/gcp-oidc-auth:1.1.0
+    type: regnosysops/gcp-oidc-auth:1.0.1
     arguments:
       WIF_PROVIDER: ${{GCP_WIF_PROVIDER_CODEFRESH_AUDIENCE}}
       SERVICE_ACCOUNT: ${{GCP_CODEFRESH_SERVICE_ACCOUNT}}
 
   Build:
-    image: maven:3.9.16-eclipse-temurin-21
+    image: maven:3.9.11-eclipse-temurin-21
     working_directory: ./
     commands:
       - mvn ${{MVN_CLI_OPT}} versions:set -DnewVersion=${{RELEASE_NAME}}
       - mvn ${{MVN_CLI_OPT}} clean deploy
+      - cf_export ROSETTA_BUNDLE_VERSION=$(mvn ${{MVN_CLI_OPT}} help:evaluate -Dexpression=rosetta.bundle.version -q -DforceStdout)
+      - cf_export ROSETTA_DSL_VERSION=$(mvn ${{MVN_CLI_OPT}} help:evaluate -Dexpression=rosetta.dsl.version -q -DforceStdout)
+
+hooks:
+  on_fail:
+    # Runs when any step fails, so a release that breaks anywhere in the pipeline
+    # gets reported. Posts to Slack directly instead of chaining to the shared
+    # slack-notifier pipeline: that pipeline's webhook (SLACK_DEV_CHANNEL) is
+    # revoked, and its curl has no --fail, so Slack's 'invalid_token' reply was
+    # swallowed and every notification it sent was lost.
+    exec:
+      image: curlimages/curl:8.11.0
+      commands:
+        - |-
+          set -e
+          # Read each value from the injected environment, falling back to
+          # Codefresh yaml interpolation - hooks do not guarantee either one.
+          RELEASE_TAG="${CF_RELEASE_TAG:-}"; [ -n "${RELEASE_TAG}" ] || RELEASE_TAG='${{CF_RELEASE_TAG}}'
+          BRANCH="${CF_BRANCH:-}"; [ -n "${BRANCH}" ] || BRANCH='${{CF_BRANCH}}'
+          REPO_NAME="${CF_REPO_NAME:-}"; [ -n "${REPO_NAME}" ] || REPO_NAME='${{CF_REPO_NAME}}'
+          BUILD_URL="${CF_BUILD_URL:-}"; [ -n "${BUILD_URL}" ] || BUILD_URL='${{CF_BUILD_URL}}'
+          AUTHOR="${CF_COMMIT_AUTHOR:-}"; [ -n "${AUTHOR}" ] || AUTHOR='${{CF_COMMIT_AUTHOR}}'
+          # Webhooks come from the GLOBAL_ENVS shared context. Target
+          # #codefresh-notify, the channel the GitHub Actions build
+          # notifications already use, and fall back to #system-alerts so a
+          # failed release is never silent if that variable is missing.
+          TARGET='#codefresh-notify'
+          WEBHOOK_URL="${SLACK_CODEFRESH_NOTIFY_CHANNEL:-}"
+          [ -n "${WEBHOOK_URL}" ] || WEBHOOK_URL='${{SLACK_CODEFRESH_NOTIFY_CHANNEL}}'
+          case "${WEBHOOK_URL}" in
+            https://hooks.slack.com/*) ;;
+            *)
+              TARGET='#system-alerts (fallback)'
+              WEBHOOK_URL="${SLACK_SYSTEM_ALERTS_CHANNEL:-}"
+              [ -n "${WEBHOOK_URL}" ] || WEBHOOK_URL='${{SLACK_SYSTEM_ALERTS_CHANNEL}}'
+              ;;
+          esac
+          # Notify only when releasing a new version of the model. The GitHub
+          # release trigger sets CF_RELEASE_TAG; on any other build Codefresh
+          # leaves the placeholder unexpanded.
+          case "${RELEASE_TAG}" in
+            ''|*CF_RELEASE_TAG*)
+              echo "Not a release build - skipping Slack notification"
+              exit 0
+              ;;
+          esac
+          case "${WEBHOOK_URL}" in
+            https://hooks.slack.com/*) ;;
+            *)
+              echo "Neither SLACK_CODEFRESH_NOTIFY_CHANNEL nor SLACK_SYSTEM_ALERTS_CHANNEL resolved to a Slack webhook URL - cannot notify"
+              exit 1
+              ;;
+          esac
+          case "${AUTHOR}" in
+            ''|*CF_COMMIT_AUTHOR*) AUTHOR='unknown' ;;
+          esac
+          TEXT=$(printf ':rotating_light: *%s release `%s` failed to build* on branch `%s` (author: %s).\\n<%s|View build in Codefresh>' \
+            "${REPO_NAME}" "${RELEASE_TAG}" "${BRANCH}" "${AUTHOR}" "${BUILD_URL}")
+          # --fail-with-body: a rejected webhook fails this hook loudly rather
+          # than being logged as a delivered notification.
+          curl -sS --fail-with-body -X POST -H 'Content-type: application/json' \
+            --data "$(printf '{"text":"%s"}' "${TEXT}")" "${WEBHOOK_URL}"
+          echo "Slack notification sent to ${TARGET} for failed release ${RELEASE_TAG}"
