@@ -1,0 +1,16 @@
+{
+  "id" : "pipeline-projection-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-fca-ukemir-trade-fca-uk-emir-trade-report-to-iso20022",
+  "name" : "BANKABC Fca Uk Emir Trade Report To Iso20022",
+  "transform" : {
+    "type" : "PROJECTION",
+    "function" : "drr.projection.iso20022.fca.ukemir.refit.trade.functions.Project_FcaUkEmirTradeReportToIso20022",
+    "inputType" : "drr.regulation.fca.ukemir.refit.trade.FCAUKEMIRTransactionReport",
+    "outputType" : "iso20022.auth030.fca.Document"
+  },
+  "upstreamPipelineId" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-fca-ukemir-trade",
+  "outputSerialisation" : {
+    "format" : "XML",
+    "configPath" : "xml-config/auth030-fca-rosetta-xml-config.json"
+  },
+  "modelId" : "BANKABC"
+}

@@ -1,0 +1,16 @@
+{
+  "id" : "pipeline-projection-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-asic-trade-asic-trade-report-to-iso20022",
+  "name" : "BANKABC Asic Trade Report To Iso20022",
+  "transform" : {
+    "type" : "PROJECTION",
+    "function" : "drr.projection.iso20022.asic.rewrite.trade.functions.Project_ASICTradeReportToIso20022",
+    "inputType" : "drr.regulation.asic.rewrite.trade.ASICTransactionReport",
+    "outputType" : "iso20022.auth030.asic.Document"
+  },
+  "upstreamPipelineId" : "pipeline-report-BANKABC-fpml-record-keeping-to-reportable-event-reportable-event-to-transaction-report-instruction-asic-trade",
+  "outputSerialisation" : {
+    "format" : "XML",
+    "configPath" : "xml-config/auth030-asic-rosetta-xml-config.json"
+  },
+  "modelId" : "BANKABC"
+}

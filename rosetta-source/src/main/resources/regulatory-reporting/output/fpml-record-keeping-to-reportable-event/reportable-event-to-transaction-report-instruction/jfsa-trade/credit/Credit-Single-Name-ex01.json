@@ -1,0 +1,39 @@
+{
+  "actionType" : "NEWT",
+  "assetClass" : "CRDT",
+  "cleared" : "I",
+  "collateralPortfolioIndicator" : true,
+  "confirmed" : "NCNF",
+  "contractType" : "SWAP",
+  "counterparty1" : "DUMMYLEI010000000037",
+  "counterparty2" : "DUMMYLEI020000000085",
+  "counterparty2IdentifierType" : true,
+  "cryptoAssetUnderlyingIndicator" : false,
+  "deliveryType" : "PHYS",
+  "direction1" : "SLLR",
+  "effectiveDate" : "2002-12-05",
+  "entityResponsibleForReporting" : "DUMMYLEI010000000037",
+  "eventIdentifier" : "SEF123",
+  "eventTimestamp" : "2002-12-04T16:42:16Z",
+  "eventType" : "TRAD",
+  "executionTimestamp" : "2002-12-04T16:20:47Z",
+  "expirationDate" : "2007-12-05",
+  "finalContractualSettlementDate" : "2007-12-05",
+  "leg1" : {
+    "fixedRate" : 0.007,
+    "notionalAmount" : 500000000,
+    "notionalCurrency" : "JPY",
+    "periodicPayment" : {
+      "fixedRateDayCountConvention" : "A004",
+      "fixedRatePaymentFrequencyPeriod" : "MNTH",
+      "fixedRatePaymentFrequencyPeriodMultiplier" : 3
+    }
+  },
+  "reportSubmittingEntityID" : "DUMMYLEI010000000037",
+  "reportingTimestamp" : "2024-04-29T00:00:00Z",
+  "seniority" : "SNDB",
+  "technicalRecordId" : "SEF123_2024-04-29T00:00Z",
+  "underlyingIdentification" : "JP310860A032",
+  "underlyingIdentificationType" : "I",
+  "uniqueTransactionIdentifier" : "DUMMYLEI020000000085UTICREDITSINGLEN0262"
+}

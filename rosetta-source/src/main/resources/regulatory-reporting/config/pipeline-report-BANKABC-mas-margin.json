@@ -1,0 +1,11 @@
+{
+  "id" : "pipeline-report-BANKABC-mas-margin",
+  "name" : "BANKABC MAS / Margin",
+  "transform" : {
+    "type" : "REPORT",
+    "function" : "drr.regulation.mas.rewrite.margin.reports.MASMarginReportFunction",
+    "inputType" : "drr.regulation.common.CollateralReportInstruction",
+    "outputType" : "drr.regulation.mas.rewrite.margin.MASMarginReport"
+  },
+  "modelId" : "BANKABC"
+}

@@ -4,13 +4,70 @@ a Blank repository template which could be used to create new model which are ba
 
 ## Overview
 
-Currently, report and projection tests have their pipeline IDs commented out. This is because no test packs specific to Monopoly have been generated.
-To generate test packs please add inputs to the following path:
+`BANKABC` is the placeholder model name. It appears in the Rune namespaces (`BANKABC.*`),
+the Java packages (`com.regnosys.BANKABC`), `rosetta-source/src/main/resources/rune-config.yml`
+and as the model id in the generated pipeline configs. Replace it everywhere when you fork this
+template, and keep the one spelling — the model id in the tests has to match the one in
+`rune-config.yml` exactly, it is compared case-sensitively.
 
-    - rosetta-source/main/resources
+Out of the box the model reports the DRR jurisdictions (ASIC, ESMA EMIR, FCA UK EMIR, JFSA, MAS)
+off the DRR sample set, so `mvn test` is green from the first clone. Swap those report and
+projection functions in `BANKABCTestPackCreator` for your own as you add them.
 
-Providing inputs in rosetta-source/main/resources for trade/valuation/margin in enrich directory. An example file for trade has been provided.
-Then run the test pack creator. These will generate the required test packs for the tests to run. After this you can uncomment the pipeline IDs in the tests.
+### Generating pipelines, test packs and samples
+
+```
+mvn clean -P update-expectations install -DskipTests
+mvn clean test
+```
+
+The first command regenerates everything under `rosetta-source/src/main/resources` and the second
+checks it. Commit the result.
+
+Use `mvn clean test`, not `mvn test`, after regenerating: the resources plugin copies changed files
+into `target/classes` but never deletes ones you removed, so a stale expectation left over from a
+previous run stays on the test classpath and the tests assert against it instead.
+
+Three pipelines are generated:
+
+| pipeline | shape | test packs |
+| --- | --- | --- |
+| trade | ingest &rarr; enrich &rarr; report &rarr; projection | `credit`, `events` |
+| valuation | report &rarr; projection | `valuation` |
+| collateral | report &rarr; projection | `collateral` |
+
+The trade pipeline is deliberately limited to two test packs so this template stays small. Widen
+`TRADE_TEST_PACKS` in `BANKABCTestPackCreator` for your own model — `commodity`,
+`custom-scenarios`, `equity`, `fx` and `rates` are also available, and the pack names are just the
+directory names under `ingest/input`.
+
+### Where the samples come from
+
+You do not need to hand-write input samples. `update-expectations` unpacks them from
+`com.regnosys.drr:rosetta-source`, the version pinned by `drr.version`:
+
+- `ingest/input` — FpML record-keeping messages, the root of the trade pipeline.
+- `regulatory-reporting/input` — valuation and collateral report instructions. These are already
+  report inputs, which is why those two pipelines start at `REPORT` rather than at `ENRICH`.
+
+Both directories are gitignored. They are only needed when generating; at test runtime the samples
+resolve from the DRR jar on the classpath.
+
+### If a stage generates zero test packs
+
+The test pack writer discovers test packs from the sample files **on disk** under
+`TEST_WRITE_BASE_PATH`, never from the classpath. A transform at the root of a tree reads
+`<transform>/input`; every downstream transform reads the output samples written by its upstream
+transform. So:
+
+- Keep each pipeline as a **single** tree from `TRANSLATE` through to `PROJECTION`. A tree that
+  starts at `ENRICH` looks for `enrich/input`, finds nothing, and silently generates nothing —
+  along with every stage below it.
+- Check the test pack id filter against the directory names under `ingest/input` and
+  `regulatory-reporting/input`. A filter that matches no directory also yields zero test packs,
+  with no error.
+- Give every `[enrich]` function a body. A body-less enrich transform produces an empty output, and
+  every downstream sample is empty with it.
 
 
 ## How to release a new version of the 'BLANK' Project
